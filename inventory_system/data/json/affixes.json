@@ -1,0 +1,301 @@
+{
+  "damage": {
+		"type": "PREFIX",
+		"apply_to": [
+			"MAIN_HAND",
+			"OFFHAND",
+			"CHEST",
+			"HEAD"
+		],
+		"affixes": {
+			"unblemished": {
+				"affix_name": "Unblemished",
+				"min_level": 1,
+				"stat_ranges": [{
+					"stat": "DAMAGE",
+					"minimum": 1,
+					"maximum": 2
+				}]
+			},
+			"polished": {
+				"affix_name": "Polished",
+				"min_level": 8,
+				"stat_ranges": [{
+					"stat": "DAMAGE",
+					"minimum": 3,
+					"maximum": 5
+				}]
+			},
+			"sharp": {
+				"affix_name": "Sharp",
+				"min_level": 16,
+				"stat_ranges": [{
+					"stat": "DAMAGE",
+					"minimum": 6,
+					"maximum": 10
+				}]
+			},
+			"razor_sharp": {
+				"affix_name": "Razor Sharp",
+				"min_level": 25,
+				"stat_ranges": [{
+					"stat": "DAMAGE",
+					"minimum": 11,
+					"maximum": 20
+				}]
+			}
+		}
+	},
+	"vitality": {
+		"type": "PREFIX",
+		"apply_to": [
+			"MAIN_HAND",
+			"OFFHAND",
+			"CHEST",
+			"HEAD"
+		],
+		"affixes": {
+			"vigorous": {
+				"affix_name": "Vigorous",
+				"min_level": 1,
+				"stat_ranges": [{
+					"stat": "VITALITY",
+					"minimum": 1,
+					"maximum": 3
+				}]
+			},
+			"exuberant": {
+				"affix_name": "Exuberant",
+				"min_level": 6,
+				"stat_ranges": [{
+					"stat": "VITALITY",
+					"minimum": 4,
+					"maximum": 6
+				}]
+			},
+			"lively": {
+				"affix_name": "Lively",
+				"min_level": 14,
+				"stat_ranges": [{
+					"stat": "VITALITY",
+					"minimum": 7,
+					"maximum": 12
+				}]
+			},
+			"resilient": {
+				"affix_name": "Resilient",
+				"min_level": 21,
+				"stat_ranges": [{
+					"stat": "VITALITY",
+					"minimum": 13,
+					"maximum": 25
+				}]
+			}
+		}
+	},
+	"life_point": {
+		"type": "PREFIX",
+		"apply_to": [
+			"MAIN_HAND",
+			"OFFHAND",
+			"CHEST",
+			"HEAD"
+		],
+		"affixes": {
+			"lifetime": {
+				"affix_name": "Lifetime",
+				"min_level": 1,
+				"stat_ranges": [{
+					"stat": "LIFE_POINT",
+					"minimum": 10,
+					"maximum": 30
+				}]
+			},
+			"lifeblood": {
+				"affix_name": "Lifeblood",
+				"min_level": 6,
+				"stat_ranges": [{
+					"stat": "LIFE_POINT",
+					"minimum": 40,
+					"maximum": 60
+				}]
+			},
+			"sustaining": {
+				"affix_name": "Sustaining",
+				"min_level": 14,
+				"stat_ranges": [{
+					"stat": "LIFE_POINT",
+					"minimum": 70,
+					"maximum": 120
+				}]
+			},
+			"prevailing": {
+				"affix_name": "Prevailing",
+				"min_level": 21,
+				"stat_ranges": [{
+					"stat": "LIFE_POINT",
+					"minimum": 130,
+					"maximum": 250
+				}]
+			}
+		}
+	},
+	"strength": {
+		"type": "SUFFIX",
+		"apply_to": [
+			"MAIN_HAND",
+			"OFFHAND",
+			"CHEST",
+			"HEAD"
+		],
+		"affixes": {
+			"of_power": {
+				"affix_name": "of Power",
+				"min_level": 1,
+				"stat_ranges": [{
+					"stat": "STRENGTH",
+					"minimum": 1,
+					"maximum": 2
+				}]
+			},
+			"of_might": {
+				"affix_name": "of Might",
+				"min_level": 6,
+				"stat_ranges": [{
+					"stat": "STRENGTH",
+					"minimum": 3,
+					"maximum": 4
+				}]
+			},
+			"of_courage": {
+				"affix_name": "of Courage",
+				"min_level": 14,
+				"stat_ranges": [{
+					"stat": "STRENGTH",
+					"minimum": 5,
+					"maximum": 9
+				}]
+			},
+			"of_the_templars": {
+				"affix_name": "of The Templar",
+				"min_level": 20,
+				"stat_ranges": [{
+					"stat": "STRENGTH",
+					"minimum": 10,
+					"maximum": 16
+				}]
+			},
+			"of_the_Giants": {
+				"affix_name": "of The Giants",
+				"min_level": 17,
+				"stat_ranges": [{
+					"stat": "STRENGTH",
+					"minimum": 17,
+					"maximum": 25
+				}]
+			}
+		}
+	},
+	"luck": {
+		"type": "SUFFIX",
+		"apply_to": [
+			"MAIN_HAND",
+			"OFFHAND",
+			"CHEST",
+			"HEAD"
+		],
+		"affixes": {
+			"of_greed": {
+				"affix_name": "of Greed",
+				"min_level": 1,
+				"stat_ranges": [{
+					"stat": "LUCK",
+					"minimum": 1,
+					"maximum": 3
+				}]
+			},
+			"of_avarice": {
+				"affix_name": "of Avarice",
+				"min_level": 21,
+				"stat_ranges": [{
+					"stat": "LUCK",
+					"minimum": 3,
+					"maximum": 7
+				}]
+			},
+			"of_parsimony": {
+				"affix_name": "of Parsimony",
+				"min_level": 31,
+				"stat_ranges": [{
+					"stat": "LUCK",
+					"minimum": 10,
+					"maximum": 15
+				},{
+					"stat": "INTELLIGENCE",
+					"minimum": 10,
+					"maximum": 15
+				}]
+			},
+			"of_vainglory": {
+				"affix_name": "of Vainglory",
+				"min_level": 41,
+				"stat_ranges": [{
+					"stat": "LUCK",
+					"minimum": 15,
+					"maximum": 30
+				},{
+					"stat": "INTELLIGENCE",
+					"minimum": 15,
+					"maximum": 30
+				}]
+			}
+		}
+	},
+	"experience": {
+		"type": "SUFFIX",
+		"apply_to": [
+			"MAIN_HAND",
+			"OFFHAND",
+			"CHEST",
+			"HEAD"
+		],
+		"affixes": {
+			"of_experience": {
+				"affix_name": "of Experience",
+				"min_level": 1,
+				"stat_ranges": [{
+					"stat": "BONUS_EXPERIENCE",
+					"minimum": 6,
+					"maximum": 15
+				}]
+			},
+			"of_participation": {
+				"affix_name": "of Participation",
+				"min_level": 15,
+				"stat_ranges": [{
+					"stat": "BONUS_EXPERIENCE",
+					"minimum": 16,
+					"maximum": 25
+				}]
+			},
+			"of_know_how": {
+				"affix_name": "of Know-How",
+				"min_level": 25,
+				"stat_ranges": [{
+					"stat": "BONUS_EXPERIENCE",
+					"minimum": 26,
+					"maximum": 35
+				}]
+			},
+			"of_proficiency": {
+				"affix_name": "of Proficiency",
+				"min_level": 35,
+				"stat_ranges": [{
+					"stat": "BONUS_EXPERIENCE",
+					"minimum": 36,
+					"maximum": 45
+				}]
+			}
+		}
+	}
+}

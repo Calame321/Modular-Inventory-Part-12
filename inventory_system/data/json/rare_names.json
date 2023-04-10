@@ -1,0 +1,103 @@
+{
+  "prefix": {
+      "CHEST": [
+          "Seizure",
+          "Paroxysm",
+          "Terrestrial",
+          "redundant",
+          "Portable",
+          "Gray-Market",
+          "Prim",
+          "Ample",
+          "Semi-Official",
+          "Thermal"
+      ],
+      "HEAD": [
+          "Rich",
+          "Sorcery",
+          "Such",
+          "Much",
+          "Spotless",
+          "Glossy"
+      ],
+      "OFFHAND": [
+          "Fascinating",
+          "Audio-Visual",
+          "Amusing",
+          "Fake",
+          "Mere",
+          "Tawdry",
+          "Peculiar",
+          "Intricate"
+      ],
+      "MAIN_HAND": [
+          "Barbaric",
+          "Towering",
+          "Ancient",
+          "Not-Quite-Lethal",
+          "Illegal",
+          "Villainous",
+          "Unyielding",
+          "Omnidirectional",
+          "Archaic",
+          "Controversial",
+          "Doom",
+          "Sharp",
+          "Deadly",
+          "Incurable",
+          "Punctured"
+      ]
+  },
+  "suffix": {
+      "CHEST": [
+          "Equipment",
+          "Apparatus",
+          "Habiliments",
+          "Outfit",
+          "Fort",
+          "Buttress",
+          "Deterrence",
+          "Safeguard",
+          "Insurance",
+          "Shelter",
+          "Aegis",
+          "Cover"
+      ],
+      "HEAD": [
+          "Jewelry",
+          "Ornament",
+          "Regalia",
+          "Adornment",
+          "Ice",
+          "Bauble",
+          "Bijou",
+          "Birthstone"
+      ],
+      "OFFHAND": [
+          "Trinket",
+          "Thing",
+          "Device",
+          "Toy",
+          "Hardware",
+          "Plaything"
+      ],
+      "MAIN_HAND": [
+          "Weapon",
+          "Gizmo",
+          "Arms",
+          "Heraldry",
+          "Heavy Stuff",
+          "Grinder",
+          "Mangler",
+          "Master",
+          "Scratch",
+          "Scar",
+          "Bruise",
+          "Injury",
+          "Fracture",
+          "Injustice",
+          "Ouch!",
+          "Outrage"
+      ]
+  }
+}

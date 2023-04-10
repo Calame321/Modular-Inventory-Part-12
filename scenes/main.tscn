@@ -1,0 +1,121 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://inventory_system/scenes/ui/inventory_player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://inventory_system/scenes/ui/crafting_list.tscn" type="PackedScene" id=2]
+[ext_resource path="res://inventory_system/scenes/ui/inventory_container.tscn" type="PackedScene" id=3]
+[ext_resource path="res://inventory_system/scenes/ui/player_stats_window.tscn" type="PackedScene" id=4]
+[ext_resource path="res://inventory_system/scenes/ui/settings.tscn" type="PackedScene" id=7]
+[ext_resource path="res://inventory_system/scripts/ui/ui_container.gd" type="Script" id=8]
+[ext_resource path="res://inventory_system/scenes/inventory/hotbar_node.tscn" type="PackedScene" id=10]
+[ext_resource path="res://dungeon.tscn" type="PackedScene" id=12]
+
+[node name="main" type="Node2D"]
+
+[node name="game" type="Node2D" parent="."]
+
+[node name="Dungeon" parent="game" instance=ExtResource( 12 )]
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="ui_container" type="Control" parent="ui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+settings = NodePath("windows/settings")
+player_inventory = NodePath("windows/inventory_player")
+
+[node name="windows" type="Control" parent="ui/ui_container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="settings" parent="ui/ui_container/windows" instance=ExtResource( 7 )]
+visible = false
+margin_left = -64.6146
+margin_top = -127.633
+margin_right = 79.3854
+margin_bottom = -45.6325
+
+[node name="inventory_container" parent="ui/ui_container/windows" instance=ExtResource( 3 )]
+visible = false
+margin_left = -66.4254
+margin_top = -119.801
+margin_right = 77.5746
+margin_bottom = -59.8009
+
+[node name="inventory_player" parent="ui/ui_container/windows" instance=ExtResource( 1 )]
+margin_left = -454.0
+margin_top = -103.0
+margin_right = -310.0
+margin_bottom = 71.0
+
+[node name="crafting_list" parent="ui/ui_container/windows" instance=ExtResource( 2 )]
+visible = false
+
+[node name="player_stats" parent="ui/ui_container/windows" instance=ExtResource( 4 )]
+margin_left = -391.0
+margin_top = -241.0
+margin_right = -295.0
+margin_bottom = -189.0
+
+[node name="hotbar" parent="ui/ui_container" instance=ExtResource( 10 )]
+rect_pivot_offset = Vector2( 63, 32 )
+
+[node name="buttons" type="Control" parent="ui/ui_container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="settings" type="Button" parent="ui/ui_container/buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -71.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = 28.0
+text = "Settings"
+
+[node name="quit" type="Button" parent="ui/ui_container/buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -71.0
+margin_top = 32.0
+margin_right = -8.0
+margin_bottom = 52.0
+text = "Quit"
+
+[node name="save" type="Button" parent="ui/ui_container/buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -71.0
+margin_top = 72.0
+margin_right = -8.0
+margin_bottom = 92.0
+text = "Save"
+
+[node name="load" type="Button" parent="ui/ui_container/buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -71.0
+margin_top = 96.0
+margin_right = -8.0
+margin_bottom = 116.0
+text = "Load"
+
+[connection signal="pressed" from="ui/ui_container/buttons/settings" to="ui/ui_container" method="_on_settings_pressed"]
+[connection signal="pressed" from="ui/ui_container/buttons/quit" to="ui/ui_container" method="_on_quit_pressed"]
+[connection signal="pressed" from="ui/ui_container/buttons/save" to="ui/ui_container" method="_on_save_pressed"]
+[connection signal="pressed" from="ui/ui_container/buttons/load" to="ui/ui_container" method="_on_load_pressed"]

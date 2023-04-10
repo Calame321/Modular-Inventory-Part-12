@@ -1,0 +1,364 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Affix",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/item/affix.gd"
+}, {
+"base": "Resource",
+"class": "Affix_Group",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/item/affix_group.gd"
+}, {
+"base": "Resource",
+"class": "Affix_Item",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/item/affix_item.gd"
+}, {
+"base": "Resource",
+"class": "Affix_Item_List",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/item/affix_item_list.gd"
+}, {
+"base": "Resource",
+"class": "Base_stat",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/item/base_stat.gd"
+}, {
+"base": "Area2D",
+"class": "Chest",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/interactables/interactable_chest.gd"
+}, {
+"base": "Scale_Control",
+"class": "Dragable_Control",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/ui/dragable_control.gd"
+}, {
+"base": "Inventory",
+"class": "Equipment",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/equipment.gd"
+}, {
+"base": "Inventory_Node",
+"class": "Equipment_Node",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/inventory/equipment_node.gd"
+}, {
+"base": "Inventory_Slot",
+"class": "Equipment_Slot",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/equipment_slot.gd"
+}, {
+"base": "Inventory_Slot_Node",
+"class": "Equipment_Slot_Node",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/inventory/equipment_slot_node.gd"
+}, {
+"base": "Resource",
+"class": "Game_Data",
+"language": "GDScript",
+"path": "res://inventory_system/data/game_data.gd"
+}, {
+"base": "Reference",
+"class": "Game_Enums",
+"language": "GDScript",
+"path": "res://inventory_system/managers/game_enums.gd"
+}, {
+"base": "Inventory",
+"class": "Hotbar",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/hotbar.gd"
+}, {
+"base": "Scale_Control",
+"class": "Hotbar_Node",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/inventory/hotbar_node.gd"
+}, {
+"base": "Inventory_Slot",
+"class": "Hotbar_Slot",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/hotbar_slot.gd"
+}, {
+"base": "Inventory_Slot_Node",
+"class": "Hotbar_Slot_Node",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/inventory/hotbar_slot_node.gd"
+}, {
+"base": "PanelContainer",
+"class": "InnerPanel",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/ui/inner_panel.gd"
+}, {
+"base": "Resource",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/inventory.gd"
+}, {
+"base": "InnerPanel",
+"class": "Inventory_Node",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/inventory/inventory_node.gd"
+}, {
+"base": "Resource",
+"class": "Inventory_Slot",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/inventory_slot.gd"
+}, {
+"base": "TextureRect",
+"class": "Inventory_Slot_Node",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/inventory/inventory_slot_node.gd"
+}, {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/item/item.gd"
+}, {
+"base": "Resource",
+"class": "Item_Affix_List",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/item/item_affix_list.gd"
+}, {
+"base": "Item_Usable",
+"class": "Item_Healing",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/usable_items/item_healing.gd"
+}, {
+"base": "Scale_Control",
+"class": "Item_Info",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/ui/item_info.gd"
+}, {
+"base": "Label",
+"class": "Item_Info_Line",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/ui/item_stat_line.gd"
+}, {
+"base": "TextureRect",
+"class": "Item_Node",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/inventory/item_node.gd"
+}, {
+"base": "Resource",
+"class": "Item_Unique_Stats",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/item/item_unique_stats.gd"
+}, {
+"base": "Item_Usable",
+"class": "Item_Upgrade",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/usable_items/item_upgrade.gd"
+}, {
+"base": "Resource",
+"class": "Item_Usable",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/usable_items/item_usable.gd"
+}, {
+"base": "Resource",
+"class": "Player_Data",
+"language": "GDScript",
+"path": "res://inventory_system/data/player_data.gd"
+}, {
+"base": "Node",
+"class": "Resource_Manager",
+"language": "GDScript",
+"path": "res://inventory_system/managers/resource_manager.gd"
+}, {
+"base": "Control",
+"class": "Scale_Control",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/ui/scale_control.gd"
+}, {
+"base": "Resource",
+"class": "Settings_Data",
+"language": "GDScript",
+"path": "res://inventory_system/data/settings_data.gd"
+}, {
+"base": "Scale_Control",
+"class": "Split_Stack",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/ui/split_stack.gd"
+}, {
+"base": "Resource",
+"class": "Stat_Range",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/item/stat_range.gd"
+}, {
+"base": "Resource",
+"class": "Stat_Scale",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/resources/item/stat_scale.gd"
+}, {
+"base": "Dragable_Control",
+"class": "Window",
+"language": "GDScript",
+"path": "res://inventory_system/scripts/ui/window.gd"
+} ]
+_global_script_class_icons={
+"Affix": "",
+"Affix_Group": "",
+"Affix_Item": "",
+"Affix_Item_List": "",
+"Base_stat": "",
+"Chest": "",
+"Dragable_Control": "",
+"Equipment": "",
+"Equipment_Node": "",
+"Equipment_Slot": "",
+"Equipment_Slot_Node": "",
+"Game_Data": "",
+"Game_Enums": "",
+"Hotbar": "",
+"Hotbar_Node": "",
+"Hotbar_Slot": "",
+"Hotbar_Slot_Node": "",
+"InnerPanel": "",
+"Inventory": "",
+"Inventory_Node": "",
+"Inventory_Slot": "",
+"Inventory_Slot_Node": "",
+"Item": "",
+"Item_Affix_List": "",
+"Item_Healing": "",
+"Item_Info": "",
+"Item_Info_Line": "",
+"Item_Node": "",
+"Item_Unique_Stats": "",
+"Item_Upgrade": "",
+"Item_Usable": "",
+"Player_Data": "",
+"Resource_Manager": "",
+"Scale_Control": "",
+"Settings_Data": "",
+"Split_Stack": "",
+"Stat_Range": "",
+"Stat_Scale": "",
+"Window": ""
+}
+
+[application]
+
+config/name=" Modular Inventory Part 11"
+config/description="The Refactor!"
+run/main_scene="res://scenes/main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+ItemManager="*res://inventory_system/managers/item_manager.gd"
+ResourceManager="*res://inventory_system/managers/resource_manager.gd"
+SettingsManager="*res://inventory_system/managers/settings_manager.gd"
+SignalManager="*res://inventory_system/managers/signal_manager.gd"
+InventoryManager="*res://inventory_system/managers/inventory_manager.tscn"
+SaveManager="*res://inventory_system/managers/save_manager.gd"
+CooldownManager="*res://inventory_system/managers/cooldown_manager.gd"
+
+[debug]
+
+gdscript/warnings/unused_signal=false
+gdscript/warnings/return_value_discarded=false
+
+[display]
+
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[gdnative]
+
+singletons=[  ]
+
+[image_loader]
+
+filter=false
+gen_mipmaps=false
+
+[input]
+
+move_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
+ ]
+}
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":1.0,"script":null)
+ ]
+}
+move_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
+ ]
+}
+hotbar_1={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":49,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+hotbar_2={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":50,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+hotbar_3={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+hotbar_4={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":52,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+hotbar_5={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":53,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+interact={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+inventory={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":73,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[rasterizer]
+
+use_pixel_snap=true
+
+[rendering]
+
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.0784314, 0.105882, 0.145098, 1 )

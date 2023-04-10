@@ -1,0 +1,191 @@
+{
+	"gold_coin": {
+		"name": "Gold Coin",
+		"type": "CURRENCY",
+		"stack_size": 3,
+		"level": 1
+	},
+	"crystal": {
+		"name": "Crystal",
+		"type": "MATERIAL",
+		"rarity": "RARE",
+		"stack_size": 20,
+		"level": 1
+	},
+	"wood": {
+		"name": "Wood",
+		"type": "MATERIAL",
+		"stack_size": 10,
+		"level": 1
+	},
+	"plank": {
+		"name": "Plank",
+		"type": "MATERIAL",
+		"stack_size": 20,
+		"level": 1
+	},
+	"rock": {
+		"name": "Rock",
+		"type": "MATERIAL",
+		"stack_size": 5,
+		"level": 1
+	},
+	"stone_brick": {
+		"name": "Stone Brick",
+		"type": "MATERIAL",
+		"stack_size": 10,
+		"level": 1
+	},
+	"small_healing_potion": {
+		"name": "Small Healing Potion",
+		"type": "CONSUMABLE",
+		"stack_size": 10,
+		"level": 1,
+		"usable": {
+			"type": "healing",
+			"data": {
+				"healing": 10
+			}
+		}
+	},
+	"big_healing_potion": {
+		"name": "Big Healing Potion",
+		"type": "CONSUMABLE",
+		"stack_size": 10,
+		"level": 10,
+		"usable": {
+			"type": "healing",
+			"data": {
+				"healing": 50,
+				"cooldown": 3
+			}
+		}
+	},
+	"rarity_upgrade": {
+		"name": "Rarity Upgrade Kit",
+		"type": "CONSUMABLE",
+		"level": 50,
+		"rarity": "RARE",
+		"usable": {
+			"type": "upgrade",
+			"data": {}
+		}
+	},
+	"helmet": {
+		"name": "Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HEAD",
+		"level": 2,
+		"base_stats": [{
+			"stat": "DEFENCE",
+			"minimum": 2,
+			"maximum": 3
+		}],
+		"usable": {
+			"type": "healing",
+			"data": {
+				"healing": 5,
+				"cooldown": 5,
+				"unlimited_use": true
+			}
+		}
+	},
+	"tshirt": {
+		"name": "T-Shirt",
+		"type": "EQUIPMENT",
+		"equipment_type": "CHEST",
+		"level": 1,
+		"base_stats": [{
+			"stat": "DEFENCE",
+			"minimum": 1,
+			"maximum": 2
+		},{
+			"stat": "DEXTERITY",
+			"minimum": 3,
+			"maximum": 6
+		}]
+	},
+	"chestplate": {
+		"name": "Chestplate",
+		"type": "EQUIPMENT",
+		"equipment_type": "CHEST",
+		"level": 7,
+		"base_stats": [{
+			"stat": "DEFENCE",
+			"minimum": 4,
+			"maximum": 7
+		}]
+	},
+	"wooden_sword": {
+		"name": "Wooden Sword",
+		"type": "EQUIPMENT",
+		"equipment_type": "MAIN_HAND",
+		"level": 1,
+		"base_stats": [{
+			"stat": "DAMAGE",
+			"minimum": 1,
+			"maximum": 3
+		}]
+	},
+	"iron_sword": {
+		"name": "Iron Sword",
+		"type": "EQUIPMENT",
+		"equipment_type": "MAIN_HAND",
+		"level": 1,
+		"base_stats": [{
+			"stat": "DAMAGE",
+			"minimum": 3,
+			"maximum": 7
+		}]
+	},
+	"shield": {
+		"name": "Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "OFFHAND",
+		"level": 1,
+		"base_stats": [{
+			"stat": "DEFENCE",
+			"minimum": 3,
+			"maximum": 7
+		}]
+	},
+	"magic_orb": {
+		"name": "Magic Orb",
+		"type": "EQUIPMENT",
+		"equipment_type": "OFFHAND",
+		"level": 1,
+		"base_stats": [{
+			"stat": "INTELLIGENCE",
+			"minimum": 4,
+			"maximum": 8
+		},{
+			"stat": "REGENERATION",
+			"minimum": 1,
+			"maximum": 3
+		}],
+		"unique": {
+			"name": "Crystal Orb of Gortyk",
+			"stats": [{
+				"stat": "ALL_STATS",
+				"minimum": 10,
+				"maximum": 20
+			},{
+				"stat": "REGENERATION",
+				"minimum": 5,
+				"maximum": 10
+			},{
+				"stat": "LIFE_POINT",
+				"minimum": 20,
+				"maximum": 40
+			}],
+			"usable": {
+				"type": "healing",
+				"data": {
+					"healing": 5,
+					"cooldown": 5,
+					"unlimited_use": true
+				}
+			}
+		}
+	}
+}

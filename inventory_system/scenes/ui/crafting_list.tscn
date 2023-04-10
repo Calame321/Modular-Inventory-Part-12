@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://inventory_system/scenes/ui/window.tscn" type="PackedScene" id=1]
+[ext_resource path="res://inventory_system/scripts/ui/crafting_list.gd" type="Script" id=2]
+
+
+[node name="crafting_list" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+recipe_list = NodePath("recipe_list")
+
+[node name="Label" parent="title" index="1"]
+text = "Crafting"
+
+[node name="recipe_list" type="VBoxContainer" parent="." index="1"]
+margin_left = 9.0
+margin_top = 9.0
+margin_right = 135.0
+margin_bottom = 51.0

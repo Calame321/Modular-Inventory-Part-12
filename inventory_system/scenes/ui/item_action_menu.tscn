@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://inventory_system/resources/font/Arcadepix Plus.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://inventory_system/resources/sprites/inner_panel.png" type="Texture" id=2]
+[ext_resource path="res://inventory_system/scripts/ui/item_action_menu.gd" type="Script" id=3]
+
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 18, 18 )
+margin_left = 8.0
+margin_right = 8.0
+margin_top = 8.0
+margin_bottom = 8.0
+
+[node name="item_action_menu" type="Control"]
+script = ExtResource( 3 )
+item_menu = NodePath("PopupMenu")
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0.423529, 0.247059, 0.121569, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
+
+[connection signal="id_pressed" from="PopupMenu" to="." method="_on_PopupMenu_id_pressed"]

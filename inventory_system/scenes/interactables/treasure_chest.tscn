@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://inventory_system/scripts/interactables/treasure_chest.gd" type="Script" id=1]
+[ext_resource path="res://inventory_system/resources/sprites/interactables/gold_chest.png" type="Texture" id=2]
+[ext_resource path="res://inventory_system/scenes/interactables/interactable_chest.tscn" type="PackedScene" id=3]
+
+[node name="treasure_chest" instance=ExtResource( 3 )]
+script = ExtResource( 1 )
+inventory_name = "Infinite Loot"
+items = [ "gold_coin", "helmet", "tshirt", "chestplate", "wooden_sword", "iron_sword", "shield", "magic_orb" ]
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )

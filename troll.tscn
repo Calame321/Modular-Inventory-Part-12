@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://troll.gd" type="Script" id=1]
+[ext_resource path="res://troll.png" type="Texture" id=2]
+[ext_resource path="res://inventory_system/scripts/interactables/interactable_labels.gd" type="Script" id=3]
+[ext_resource path="res://inventory_system/resources/font/font_14.tres" type="DynamicFont" id=4]
+[ext_resource path="res://inventory_system/resources/font/font_12.tres" type="DynamicFont" id=5]
+[ext_resource path="res://inventory_system/data/resources/player_data.tres" type="Resource" id=6]
+
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 16.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 16.0
+height = 24.0
+
+[node name="Troll" type="KinematicBody2D"]
+script = ExtResource( 1 )
+interact_zone = NodePath("interactable_zone")
+interact_labels = NodePath("interactable labels")
+player_data = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -4, -28 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="interactable_zone" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_zone"]
+rotation = -1.57079
+shape = SubResource( 2 )
+
+[node name="interactable labels" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -102.0
+margin_top = -100.0
+margin_right = 102.0
+margin_bottom = -75.0
+rect_pivot_offset = Vector2( 102, 25 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+lbl_action = NodePath("action")
+lbl_name = NodePath("object_name")
+
+[node name="action" type="Label" parent="interactable labels"]
+margin_right = 204.0
+margin_bottom = 11.0
+custom_fonts/font = ExtResource( 4 )
+text = "Press \"e\" to *action*"
+align = 1
+
+[node name="object_name" type="Label" parent="interactable labels"]
+margin_top = 15.0
+margin_right = 204.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+text = "object name!"
+align = 1
+
+[connection signal="area_exited" from="interactable_zone" to="." method="_on_interactable_zone_area_exited"]

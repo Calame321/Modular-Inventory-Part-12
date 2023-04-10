@@ -1,0 +1,72 @@
+{
+    "VITALITY": {
+        "name":"Vitality",
+        "display":"+%s to Vitality",
+        "affected_by":{
+            "ALL_STATS": 1
+        }
+    },
+	"STRENGTH": {
+        "name":"Strength",
+        "display":"+%s to Strength",
+        "affected_by":{
+            "ALL_STATS": 1
+        }
+    },
+    "INTELLIGENCE": {
+        "name":"Intelligence",
+        "display":"+%s to Intelligence",
+        "affected_by":{
+            "ALL_STATS": 1
+        }
+    },
+    "DEXTERITY": {
+        "name":"Dexterity",
+        "display":"+%s to Dexterity",
+        "affected_by":{
+            "ALL_STATS": 1
+        }
+    },
+    "LUCK": {
+        "name":"Luck",
+        "display":"+%s to Luck"
+    },
+    "ALL_STATS": {
+        "name":"All Stats",
+        "display":"+%s to All Stats"
+    },
+    "LIFE_POINT": {
+        "name":"Life Points",
+        "display":"+%s Life Points"
+    },
+    "REGENERATION": {
+        "name":"Regeneration",
+        "display":"Regenerate +%s Life Points Per Second"
+    },
+    "LIFE_ON_HIT": {
+        "name":"Life on Hit",
+        "display":"Heal +%s Life Points Per Hit"
+    },
+    "DAMAGE": {
+        "name":"Damage",
+        "display":"+%s Damage",
+        "affected_by":{
+            "STRENGTH": 0.5
+        }
+    },
+    "DEFENCE": {
+        "name":"Defence",
+        "display":"+%s Defence"
+    },
+    "BONUS_EXPERIENCE": {
+        "name":"Bonus Experience",
+        "display":"+%s%% Bonus Experience"
+    },
+    "MOVE_SPEED": {
+        "name":"Move Speed",
+        "display":"+%s to your movement speed",
+        "affected_by":{
+            "DEXTERITY": 10
+        }
+    }
+}

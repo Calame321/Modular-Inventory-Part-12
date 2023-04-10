@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/x_disabled.png-d0fc8b05ee0c30d0bee4cd42585e63ce.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://inventory_system/resources/sprites/x_disabled.png"
+dest_files=[ "res://.import/x_disabled.png-d0fc8b05ee0c30d0bee4cd42585e63ce.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

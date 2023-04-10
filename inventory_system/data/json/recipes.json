@@ -1,0 +1,168 @@
+{
+  "tier1": {
+    "Wood": {
+      "price": [],
+      "produce": [
+        {
+          "id": "wood",
+          "quantity": 1
+        }
+      ]
+    },
+    "Plank": {
+      "price": [
+        {
+          "id": "wood",
+          "quantity": 1
+        }
+      ],
+      "produce": [
+        {
+          "id": "plank",
+          "quantity": 2
+        }
+      ]
+    },
+    "Small Healing Potion": {
+      "price": [
+        {
+          "id": "wood",
+          "quantity": 20
+        }
+      ],
+      "produce": [
+        {
+          "id": "small_healing_potion",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  "tier2": {
+    "Rock": {
+      "price": [],
+      "produce": [
+        {
+          "id": "rock",
+          "quantity": 1
+        }
+      ]
+    },
+    "Stone Brick": {
+      "price": [
+        {
+          "id": "rock",
+          "quantity": 2
+        }
+      ],
+      "produce": [
+        {
+          "id": "stone_brick",
+          "quantity": 1
+        }
+      ]
+    },
+    "Crystal": {
+      "price": [
+        {
+          "id": "stone_brick",
+          "quantity": 20
+        },
+        {
+          "id": "plank",
+          "quantity": 20
+        }
+      ],
+      "produce": [
+        {
+          "id": "crystal",
+          "quantity": 1
+        }
+      ]
+    },
+    "Rarity Upgrade Kit": {
+      "price": [
+        {
+          "id": "stone_brick",
+          "quantity": 5
+        },
+        {
+          "id": "crystal",
+          "quantity": 5
+        }
+      ],
+      "produce": [
+        {
+          "id": "rarity_upgrade",
+          "quantity": 1
+        },
+        {
+          "id": "crystal",
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  "shop": {
+    "Iron Sword": {
+      "price": [
+        {
+          "id": "gold_coin",
+          "quantity": 2
+        }
+      ],
+      "produce": [
+        {
+          "id": "iron_sword",
+          "quantity": 1
+        }
+      ]
+    },
+    "T-Shirt": {
+      "price": [
+        {
+          "id": "gold_coin",
+          "quantity": 4
+        }
+      ],
+      "produce": [
+        {
+          "id": "tshirt",
+          "quantity": 1
+        }
+      ]
+    },
+    "Magic Orb": {
+      "price": [
+        {
+          "id": "gold_coin",
+          "quantity": 10
+        },
+        {
+          "id": "crystal",
+          "quantity": 1
+        }
+      ],
+      "produce": [
+        {
+          "id": "magic_orb",
+          "quantity": 1
+        }
+      ]
+    },
+    "shield": {
+      "price": [
+        {
+          "id": "gold_coin",
+          "quantity": 1
+        }
+      ],
+      "produce": [
+        {
+          "id": "shield",
+          "quantity": 1
+        }
+      ]
+    }
+  }
+}

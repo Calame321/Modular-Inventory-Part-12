@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://inventory_system/scripts/inventory/inventory_node.gd" type="Script" id=1]
+[ext_resource path="res://inventory_system/scenes/ui/inner_panel.tscn" type="PackedScene" id=2]
+
+[node name="inventory" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+inventory_name = ""
+size = 0
+slot_container = NodePath("MarginContainer/slot_container")
+
+[node name="slot_container" type="GridContainer" parent="MarginContainer" index="0"]
+margin_top = 6.0
+margin_right = 69.0
+margin_bottom = 24.0
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}

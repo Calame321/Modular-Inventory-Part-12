@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://inventory_system/scripts/ui/crafting_option.gd" type="Script" id=1]
+[ext_resource path="res://inventory_system/resources/font/font_8.tres" type="DynamicFont" id=2]
+[ext_resource path="res://inventory_system/scenes/ui/inner_panel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://inventory_system/resources/sprites/button/disabled.png" type="Texture" id=4]
+[ext_resource path="res://inventory_system/resources/sprites/button/normal.png" type="Texture" id=5]
+[ext_resource path="res://inventory_system/resources/sprites/button/hover.png" type="Texture" id=6]
+[ext_resource path="res://inventory_system/resources/sprites/arrow.png" type="Texture" id=7]
+[ext_resource path="res://inventory_system/resources/sprites/button/pressed.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 11, 11 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 3.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 11, 11 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 3.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 11, 11 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 3.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 11, 11 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 3.0
+margin_bottom = 5.0
+
+[node name="crafting_option" instance=ExtResource( 3 )]
+margin_right = 76.0
+script = ExtResource( 1 )
+price_list = NodePath("MarginContainer/HBoxContainer/price")
+produce_list = NodePath("MarginContainer/HBoxContainer/produce")
+craft_btn = NodePath("MarginContainer/HBoxContainer/commands/craft")
+
+[node name="title" parent="." index="0"]
+margin_right = 131.0
+
+[node name="MarginContainer" parent="." index="1"]
+margin_right = 131.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" index="0"]
+margin_top = 6.0
+margin_right = 123.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="price" type="VBoxContainer" parent="MarginContainer/HBoxContainer" index="0"]
+margin_right = 32.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="arrow" type="TextureRect" parent="MarginContainer/HBoxContainer" index="1"]
+margin_left = 36.0
+margin_right = 49.0
+margin_bottom = 18.0
+texture = ExtResource( 7 )
+stretch_mode = 4
+
+[node name="produce" type="VBoxContainer" parent="MarginContainer/HBoxContainer" index="2"]
+margin_left = 53.0
+margin_right = 86.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="commands" type="VBoxContainer" parent="MarginContainer/HBoxContainer" index="3"]
+margin_left = 90.0
+margin_right = 123.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="craft" type="Button" parent="MarginContainer/HBoxContainer/commands" index="0"]
+margin_top = 2.0
+margin_right = 33.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "Craft"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/commands/craft" to="." method="_on_craft_pressed"]
