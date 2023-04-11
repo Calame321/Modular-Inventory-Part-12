@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name=" Modular Inventory Part 11"
-config/description="The Refactor!"
+config/name=" Modular Inventory Part 12"
+config/description="Updating to Godot 4."
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"

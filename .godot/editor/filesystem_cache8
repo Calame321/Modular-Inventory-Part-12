@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1681229830
+::res://::1681230848
 dungeon.tscn::PackedScene::-1::1681228247::0::1::::<><>::res://tileset.tres<>res://troll.tscn<>res://inventory_system/scenes/interactables/floor_item.tscn<>res://inventory_system/scenes/interactables/interactable_chest.tscn<>res://inventory_system/scenes/interactables/random_chest.tscn<>res://inventory_system/scenes/interactables/treasure_chest.tscn<>res://inventory_system/resources/sprites/items/gold_coin.png<>res://inventory_system/resources/sprites/items/wood.png<>res://inventory_system/resources/sprites/items/rock.png<>res://inventory_system/scenes/interactables/crafting_table.tscn<>res://inventory_system/scripts/resources/inventory.gd
 icon.png::CompressedTexture2D::2892481096181836912::1669164672::1681229831::1::::<><>::
 isotiles.png::CompressedTexture2D::8843277153011347919::1669164672::1681229832::1::::<><>::
@@ -37,12 +37,12 @@ save_manager.gd::GDScript::-1::1681228247::0::1::::<>Node<>::
 settings_manager.gd::GDScript::-1::1681228247::0::1::::<>Node<>::
 signal_manager.gd::GDScript::-1::1681228247::0::1::::<>Node<>::
 ::res://inventory_system/resources/::1681147064
-::res://inventory_system/resources/font/::1681228223
+::res://inventory_system/resources/font/::1681229831
 Arcadepix Plus.ttf::FontFile::6713430337378890618::1669164672::1681229831::1::::<><>::
 font_8.tres::FontFile::-1::1681228247::0::1::::<><>::res://inventory_system/resources/font/Arcadepix Plus.ttf
 font_12.tres::FontFile::-1::1681228247::0::1::::<><>::res://inventory_system/resources/font/Arcadepix Plus.ttf
 font_14.tres::FontFile::-1::1681228247::0::1::::<><>::res://inventory_system/resources/font/Arcadepix Plus.ttf
-::res://inventory_system/resources/sprites/::1681228223
+::res://inventory_system/resources/sprites/::1681229831
 arrow.png::CompressedTexture2D::8481746872544793868::1669164672::1681229831::1::::<><>::
 bar.png::CompressedTexture2D::7046285221840559939::1669164672::1681229831::1::::<><>::
 cooldown.png::CompressedTexture2D::3364704385569523198::1669164672::1681229831::1::::<><>::
@@ -58,17 +58,17 @@ x_disabled.png::CompressedTexture2D::5514903694766759471::1669164672::1681229831
 x_hover.png::CompressedTexture2D::7190095458229465299::1669164672::1681229831::1::::<><>::
 x_normal.png::CompressedTexture2D::5647767524880901532::1669164672::1681229831::1::::<><>::
 x_pressed.png::CompressedTexture2D::560020588771044274::1669164672::1681229831::1::::<><>::
-::res://inventory_system/resources/sprites/button/::1681228223
+::res://inventory_system/resources/sprites/button/::1681229831
 disabled.png::CompressedTexture2D::1153574704908513005::1669164672::1681229831::1::::<><>::
 hover.png::CompressedTexture2D::8803841266212364845::1669164672::1681229831::1::::<><>::
 normal.png::CompressedTexture2D::9093585158787784007::1669164672::1681229831::1::::<><>::
 pressed.png::CompressedTexture2D::2344537614999031906::1669164672::1681229831::1::::<><>::
-::res://inventory_system/resources/sprites/interactables/::1681228223
+::res://inventory_system/resources/sprites/interactables/::1681229831
 bag.png::CompressedTexture2D::5321335903465013368::1669164672::1681229831::1::::<><>::
 chest.png::CompressedTexture2D::6163350269564929039::1669164672::1681229831::1::::<><>::
 gold_chest.png::CompressedTexture2D::4059133025061264703::1669164672::1681229831::1::::<><>::
 table.png::CompressedTexture2D::2803347749941064623::1669164672::1681229831::1::::<><>::
-::res://inventory_system/resources/sprites/items/::1681228223
+::res://inventory_system/resources/sprites/items/::1681229832
 big_red_potion.png::CompressedTexture2D::6219840022069777811::1669164672::1681229831::1::::<><>::
 chestplate.png::CompressedTexture2D::8720893155473805468::1669164672::1681229831::1::::<><>::
 crystal.png::CompressedTexture2D::8402551454673753987::1669164672::1681229831::1::::<><>::
