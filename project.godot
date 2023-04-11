@@ -1,248 +1,19 @@
-; Project was converted by built-in tool to Godot 4.0
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
 config_version=5
-_global_script_classes=[{
-"base": "Resource",
-"class": "Affix",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/item/affix.gd"
-}, {
-"base": "Resource",
-"class": "Affix_Group",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/item/affix_group.gd"
-}, {
-"base": "Resource",
-"class": "Affix_Item",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/item/affix_item.gd"
-}, {
-"base": "Resource",
-"class": "Affix_Item_List",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/item/affix_item_list.gd"
-}, {
-"base": "Resource",
-"class": "Base_stat",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/item/base_stat.gd"
-}, {
-"base": "Area2D",
-"class": "Chest",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/interactables/interactable_chest.gd"
-}, {
-"base": "Scale_Control",
-"class": "Dragable_Control",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/ui/dragable_control.gd"
-}, {
-"base": "Inventory",
-"class": "Equipment",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/equipment.gd"
-}, {
-"base": "Inventory_Node",
-"class": "Equipment_Node",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/inventory/equipment_node.gd"
-}, {
-"base": "Inventory_Slot",
-"class": "Equipment_Slot",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/equipment_slot.gd"
-}, {
-"base": "Inventory_Slot_Node",
-"class": "Equipment_Slot_Node",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/inventory/equipment_slot_node.gd"
-}, {
-"base": "Resource",
-"class": "Game_Data",
-"language": "GDScript",
-"path": "res://inventory_system/data/game_data.gd"
-}, {
-"base": "Reference",
-"class": "Game_Enums",
-"language": "GDScript",
-"path": "res://inventory_system/managers/game_enums.gd"
-}, {
-"base": "Inventory",
-"class": "Hotbar",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/hotbar.gd"
-}, {
-"base": "Scale_Control",
-"class": "Hotbar_Node",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/inventory/hotbar_node.gd"
-}, {
-"base": "Inventory_Slot",
-"class": "Hotbar_Slot",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/hotbar_slot.gd"
-}, {
-"base": "Inventory_Slot_Node",
-"class": "Hotbar_Slot_Node",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/inventory/hotbar_slot_node.gd"
-}, {
-"base": "PanelContainer",
-"class": "InnerPanel",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/ui/inner_panel.gd"
-}, {
-"base": "Resource",
-"class": "Inventory",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/inventory.gd"
-}, {
-"base": "InnerPanel",
-"class": "Inventory_Node",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/inventory/inventory_node.gd"
-}, {
-"base": "Resource",
-"class": "Inventory_Slot",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/inventory_slot.gd"
-}, {
-"base": "TextureRect",
-"class": "Inventory_Slot_Node",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/inventory/inventory_slot_node.gd"
-}, {
-"base": "Resource",
-"class": "Item",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/item/item.gd"
-}, {
-"base": "Resource",
-"class": "Item_Affix_List",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/item/item_affix_list.gd"
-}, {
-"base": "Item_Usable",
-"class": "Item_Healing",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/usable_items/item_healing.gd"
-}, {
-"base": "Scale_Control",
-"class": "Item_Info",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/ui/item_info.gd"
-}, {
-"base": "Label",
-"class": "Item_Info_Line",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/ui/item_stat_line.gd"
-}, {
-"base": "TextureRect",
-"class": "Item_Node",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/inventory/item_node.gd"
-}, {
-"base": "Resource",
-"class": "Item_Unique_Stats",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/item/item_unique_stats.gd"
-}, {
-"base": "Item_Usable",
-"class": "Item_Upgrade",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/usable_items/item_upgrade.gd"
-}, {
-"base": "Resource",
-"class": "Item_Usable",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/usable_items/item_usable.gd"
-}, {
-"base": "Resource",
-"class": "Player_Data",
-"language": "GDScript",
-"path": "res://inventory_system/data/player_data.gd"
-}, {
-"base": "Node",
-"class": "Resource_Manager",
-"language": "GDScript",
-"path": "res://inventory_system/managers/resource_manager.gd"
-}, {
-"base": "Control",
-"class": "Scale_Control",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/ui/scale_control.gd"
-}, {
-"base": "Resource",
-"class": "Settings_Data",
-"language": "GDScript",
-"path": "res://inventory_system/data/settings_data.gd"
-}, {
-"base": "Scale_Control",
-"class": "Split_Stack",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/ui/split_stack.gd"
-}, {
-"base": "Resource",
-"class": "Stat_Range",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/item/stat_range.gd"
-}, {
-"base": "Resource",
-"class": "Stat_Scale",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/resources/item/stat_scale.gd"
-}, {
-"base": "Dragable_Control",
-"class": "Window",
-"language": "GDScript",
-"path": "res://inventory_system/scripts/ui/window.gd"
-}]
-_global_script_class_icons={
-"Affix": "",
-"Affix_Group": "",
-"Affix_Item": "",
-"Affix_Item_List": "",
-"Base_stat": "",
-"Chest": "",
-"Dragable_Control": "",
-"Equipment": "",
-"Equipment_Node": "",
-"Equipment_Slot": "",
-"Equipment_Slot_Node": "",
-"Game_Data": "",
-"Game_Enums": "",
-"Hotbar": "",
-"Hotbar_Node": "",
-"Hotbar_Slot": "",
-"Hotbar_Slot_Node": "",
-"InnerPanel": "",
-"Inventory": "",
-"Inventory_Node": "",
-"Inventory_Slot": "",
-"Inventory_Slot_Node": "",
-"Item": "",
-"Item_Affix_List": "",
-"Item_Healing": "",
-"Item_Info": "",
-"Item_Info_Line": "",
-"Item_Node": "",
-"Item_Unique_Stats": "",
-"Item_Upgrade": "",
-"Item_Usable": "",
-"Player_Data": "",
-"Resource_Manager": "",
-"Scale_Control": "",
-"Settings_Data": "",
-"Split_Stack": "",
-"Stat_Range": "",
-"Stat_Scale": "",
-"Window": ""
-}
 
 [application]
 
 config/name=" Modular Inventory Part 11"
 config/description="The Refactor!"
 run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
 
 [autoload]
@@ -262,7 +33,6 @@ gdscript/warnings/return_value_discarded=false
 
 [display]
 
-window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
@@ -351,6 +121,5 @@ use_pixel_snap=true
 
 [rendering]
 
-vram_compression/import_etc=true
-textures/vram_compression/import_etc2_astc=false
 environment/defaults/default_clear_color=Color(0.0784314, 0.105882, 0.145098, 1)
+vram_compression/import_etc=true
