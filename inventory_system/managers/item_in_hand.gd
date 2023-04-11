@@ -1,4 +1,4 @@
-extends Scale_Control
+extends Control
 
 var item : Item: set = set_item
 

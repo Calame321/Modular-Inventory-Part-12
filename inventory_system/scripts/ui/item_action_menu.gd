@@ -1,4 +1,4 @@
-extends Scale_Control
+extends Control
 
 @export( NodePath ) onready var item_menu = get_node( item_menu ) as PopupMenu
 

@@ -1,4 +1,4 @@
-class_name Hotbar_Node extends Scale_Control
+class_name Hotbar_Node extends Control
 
 @export ( NodePath ) onready var slot_container = get_node( slot_container ) as Control
 

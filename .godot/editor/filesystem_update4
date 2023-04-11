@@ -1,7 +1,8 @@
-res://troll.tscn
-res://tileset.tres
-res://inventory_system/scenes/interactables/floor_item.tscn
-res://inventory_system/scenes/interactables/interactable_chest.tscn
-res://inventory_system/scenes/interactables/crafting_table.tscn
-res://dungeon.tscn
 res://scenes/main.tscn
+res://tileset.tres
+res://inventory_system/scripts/ui/dragable_control.gd
+res://inventory_system/scripts/inventory/hotbar_node.gd
+res://inventory_system/scripts/interactables/interactable_labels.gd
+res://inventory_system/scripts/ui/item_action_menu.gd
+res://inventory_system/scripts/ui/item_info.gd
+res://inventory_system/managers/item_in_hand.gd

@@ -1,4 +1,4 @@
-class_name Dragable_Control extends Scale_Control
+class_name Dragable_Control extends Control
 
 @export ( int ) var safe_zone = 30
 

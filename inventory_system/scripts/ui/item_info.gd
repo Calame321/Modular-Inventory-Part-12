@@ -1,4 +1,4 @@
-class_name Item_Info extends Scale_Control
+class_name Item_Info extends Control
 
 @export( NodePath ) onready var item_name = get_node( item_name ) as Label
 @export( NodePath ) onready var line_container = get_node( line_container ) as Control
