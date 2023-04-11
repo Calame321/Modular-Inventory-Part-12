@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://casqvfd5sf8gt"]
 
-[ext_resource path="res://inventory_system/scripts/inventory/equipment_node.gd" type="Script" id=2]
-[ext_resource path="res://inventory_system/scenes/ui/inner_panel.tscn" type="PackedScene" id=4]
-[ext_resource path="res://inventory_system/scenes/inventory/equipment_slot_node.tscn" type="PackedScene" id=5]
+[ext_resource type="Script" path="res://inventory_system/scripts/inventory/equipment_node.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://dnuxhuagrcni4" path="res://inventory_system/scenes/ui/inner_panel.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://ctnbgcbg75hd0" path="res://inventory_system/scenes/inventory/equipment_slot_node.tscn" id="5"]
 
-[node name="equipment" instance=ExtResource( 4 )]
-custom_minimum_size = Vector2( 0, 70 )
-script = ExtResource( 2 )
+[node name="equipment" instance=ExtResource("4")]
+custom_minimum_size = Vector2(0, 70)
+anchors_preset = 5
+script = ExtResource("2")
 slot_container = NodePath("MarginContainer/slot_container")
 head = NodePath("MarginContainer/slot_container/equipment_head")
 chest = NodePath("MarginContainer/slot_container/equipment_chest")
@@ -14,26 +15,31 @@ offhand = NodePath("MarginContainer/slot_container/equipment_offhand")
 main_hand = NodePath("MarginContainer/slot_container/equipment_main_hand")
 
 [node name="title" parent="." index="0"]
-offset_bottom = 62.0
+layout_mode = 2
+
+[node name="TextureRect" parent="title" index="0"]
+layout_mode = 0
+
+[node name="Label" parent="title/TextureRect" index="0"]
+layout_mode = 0
 
 [node name="MarginContainer" parent="." index="1"]
-offset_bottom = 62.0
+layout_mode = 2
 
 [node name="slot_container" type="Control" parent="MarginContainer" index="0"]
-offset_top = 6.0
-offset_right = 69.0
-offset_bottom = 54.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+layout_mode = 2
 
-[node name="equipment_head" parent="MarginContainer/slot_container" index="0" instance=ExtResource( 5 )]
+[node name="equipment_head" parent="MarginContainer/slot_container" index="0" instance=ExtResource("5")]
+unique_name_in_owner = true
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -10.0
 offset_right = 10.0
 
-[node name="equipment_chest" parent="MarginContainer/slot_container" index="1" instance=ExtResource( 5 )]
+[node name="equipment_chest" parent="MarginContainer/slot_container" index="1" instance=ExtResource("5")]
+unique_name_in_owner = true
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -10.0
@@ -41,7 +47,9 @@ offset_top = 28.0
 offset_right = 10.0
 offset_bottom = 48.0
 
-[node name="equipment_main_hand" parent="MarginContainer/slot_container" index="2" instance=ExtResource( 5 )]
+[node name="equipment_main_hand" parent="MarginContainer/slot_container" index="2" instance=ExtResource("5")]
+unique_name_in_owner = true
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -40.0
@@ -49,7 +57,9 @@ offset_top = 28.0
 offset_right = -20.0
 offset_bottom = 48.0
 
-[node name="equipment_offhand" parent="MarginContainer/slot_container" index="3" instance=ExtResource( 5 )]
+[node name="equipment_offhand" parent="MarginContainer/slot_container" index="3" instance=ExtResource("5")]
+unique_name_in_owner = true
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 21.4399

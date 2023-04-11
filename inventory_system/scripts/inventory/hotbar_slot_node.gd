@@ -1,7 +1,5 @@
 class_name Hotbar_Slot_Node extends Inventory_Slot_Node
 
-@export ( NodePath ) onready var lbl_key = get_node( lbl_key ) as Label
-
 func set_slot( value ):
 	super.set_slot( value )
 	set_key()
@@ -14,5 +12,5 @@ func _input( event ):
 
 # Set the key to be pressed to activate this slot.
 func set_key():
-	if lbl_key is Label:
-		lbl_key.text = slot.key
+	if %lbl_key is Label:
+		%lbl_key.text = slot.key

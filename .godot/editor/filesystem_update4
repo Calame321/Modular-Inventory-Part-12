@@ -1,8 +1,2 @@
 res://scenes/main.tscn
 res://tileset.tres
-res://inventory_system/scripts/ui/dragable_control.gd
-res://inventory_system/scripts/inventory/hotbar_node.gd
-res://inventory_system/scripts/interactables/interactable_labels.gd
-res://inventory_system/scripts/ui/item_action_menu.gd
-res://inventory_system/scripts/ui/item_info.gd
-res://inventory_system/managers/item_in_hand.gd

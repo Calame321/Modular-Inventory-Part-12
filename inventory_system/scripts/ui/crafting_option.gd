@@ -1,9 +1,5 @@
 extends InnerPanel
 
-@export ( NodePath ) onready var price_list = get_node( price_list ) as VBoxContainer
-@export ( NodePath ) onready var produce_list = get_node( produce_list ) as VBoxContainer
-@export ( NodePath ) onready var craft_btn = get_node( craft_btn ) as Button
-
 var price: Array
 var produce: Array
 
@@ -19,13 +15,13 @@ func set_info( recipe_id, price_items, produce_items ):
 	
 	for item_data in price_items:
 		var price_node = ResourceManager.get_instance( "item_quantity" )
-		price_list.add_child( price_node )
+		%price.add_child( price_node )
 		var item = ItemManager.get_item( item_data.id )
 		price_node.set_info( item, item_data.quantity )
 	
 	for item_data in produce_items:
 		var produce_node = ResourceManager.get_instance( "item_quantity" )
-		produce_list.add_child( produce_node )
+		%produce.add_child( produce_node )
 		var item = ItemManager.get_item( item_data.id )
 		produce_node.set_info( item, item_data.quantity )
 

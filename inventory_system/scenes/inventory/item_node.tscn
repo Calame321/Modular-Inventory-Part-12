@@ -1,23 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://b5qmrc03e4xx2"]
 
-[ext_resource path="res://inventory_system/resources/font/font_8.tres" type="FontFile" id=1]
-[ext_resource path="res://inventory_system/scripts/inventory/item_node.gd" type="Script" id=2]
-[ext_resource path="res://inventory_system/resources/sprites/items/chestplate.png" type="Texture2D" id=3]
+[ext_resource type="FontFile" path="res://inventory_system/resources/font/font_8.tres" id="1"]
+[ext_resource type="Script" path="res://inventory_system/scripts/inventory/item_node.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dwip3otlt3ju7" path="res://inventory_system/resources/sprites/items/chestplate.png" id="3"]
 
 [node name="item_node" type="TextureRect"]
 offset_right = 16.0
 offset_bottom = 16.0
 mouse_filter = 2
-texture = ExtResource( 3 )
-script = ExtResource( 2 )
-lbl_quantity = NodePath("quantity")
+texture = ExtResource("3")
+script = ExtResource("2")
 
 [node name="quantity" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = ExtResource( 1 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1")
 text = "4"
-__meta__ = {
-"_edit_use_anchors_": false
-}

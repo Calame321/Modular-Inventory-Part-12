@@ -1,74 +1,67 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://dw6ojjjo0xb20"]
 
-[ext_resource path="res://inventory_system/resources/sprites/inner_panel.png" type="Texture2D" id=1]
-[ext_resource path="res://inventory_system/resources/sprites/title.png" type="Texture2D" id=2]
-[ext_resource path="res://inventory_system/resources/font/Arcadepix Plus.ttf" type="FontFile" id=3]
-[ext_resource path="res://inventory_system/scripts/ui/item_info.gd" type="Script" id=4]
+[ext_resource type="Texture2D" uid="uid://ddwobnon6ksr7" path="res://inventory_system/resources/sprites/inner_panel.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://du2shr5m2l0yy" path="res://inventory_system/resources/sprites/title.png" id="2"]
+[ext_resource type="FontFile" uid="uid://c2wbhmvt6pm3k" path="res://inventory_system/resources/font/Arcadepix Plus.ttf" id="3"]
+[ext_resource type="Script" path="res://inventory_system/scripts/ui/item_info.gd" id="4"]
 
+[sub_resource type="StyleBoxTexture" id="2"]
+texture = ExtResource("1")
+region_rect = Rect2(0, 0, 18, 18)
 
-[sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 18, 18 )
-offset_left = 8.0
-offset_right = 8.0
-offset_top = 8.0
-offset_bottom = 8.0
-
-[sub_resource type="FontFile" id=1]
-size = 10
-font_data = ExtResource( 3 )
+[sub_resource type="FontFile" id="1"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("3"), ExtResource("3")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="item_info" type="PanelContainer"]
 offset_right = 58.0
 offset_bottom = 18.0
-theme_override_styles/panel = SubResource( 2 )
-script = ExtResource( 4 )
-item_name = NodePath("title/Label")
-line_container = NodePath("line_container")
+theme_override_styles/panel = SubResource("2")
+script = ExtResource("4")
 
 [node name="title" type="Control" parent="."]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 50.0
-offset_bottom = 10.0
+layout_mode = 2
 
-[node name="Label" type="Label" parent="title"]
+[node name="item_name" type="Label" parent="title"]
+unique_name_in_owner = true
+layout_mode = 0
 anchor_right = 1.0
 offset_left = 2.0
 offset_top = -18.0
 offset_right = -2.0
 offset_bottom = -9.0
 grow_vertical = 0
-theme_override_colors/font_color = Color( 0.301961, 0.34902, 0.4, 1 )
-theme_override_fonts/font = SubResource( 1 )
+theme_override_colors/font_color = Color(0.301961, 0.34902, 0.4, 1)
+theme_override_fonts/font = SubResource("1")
 text = "name"
-align = 1
-valign = 1
-autowrap = true
 
-[node name="title" type="NinePatchRect" parent="title/Label"]
+[node name="title" type="NinePatchRect" parent="title/item_name"]
 show_behind_parent = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -9.0
 offset_top = -6.0
 offset_right = 9.0
 offset_bottom = 2.0
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 patch_margin_left = 8
 patch_margin_top = 6
 patch_margin_right = 8
 patch_margin_bottom = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="line_container" type="VBoxContainer" parent="."]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 50.0
-offset_bottom = 10.0
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_constants/separation = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}

@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://bmmtp05ggs0xs"]
 
-[ext_resource type="PackedScene" path="res://inventory_system/scenes/ui/inventory_player.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://inventory_system/scenes/ui/crafting_list.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://inventory_system/scenes/ui/inventory_container.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://inventory_system/scenes/ui/player_stats_window.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://inventory_system/scenes/ui/settings.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://c2ko3c2q6vk6d" path="res://inventory_system/scenes/ui/inventory_player.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dx30415iqfmdb" path="res://inventory_system/scenes/ui/crafting_list.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://c4myvhisqv51a" path="res://inventory_system/scenes/ui/inventory_container.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://c5isjsqccfmex" path="res://inventory_system/scenes/ui/player_stats_window.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cnms7pxu8y620" path="res://inventory_system/scenes/ui/settings.tscn" id="7"]
 [ext_resource type="Script" path="res://inventory_system/scripts/ui/ui_container.gd" id="8"]
-[ext_resource type="PackedScene" path="res://inventory_system/scenes/inventory/hotbar_node.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://bln54lekmrmlp" path="res://inventory_system/scenes/inventory/hotbar_node.tscn" id="10"]
 [ext_resource type="PackedScene" uid="uid://jubaop01sgry" path="res://dungeon.tscn" id="12"]
 
 [node name="main" type="Node2D"]
@@ -40,8 +40,10 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="settings" parent="ui/ui_container/windows" instance=ExtResource("7")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 0
+anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -50,10 +52,12 @@ offset_left = -64.6146
 offset_top = -127.633
 offset_right = 79.3854
 offset_bottom = -45.6325
+lbl_title = NodePath("title/Label")
 
 [node name="inventory_container" parent="ui/ui_container/windows" instance=ExtResource("3")]
 visible = false
 layout_mode = 0
+anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -62,9 +66,12 @@ offset_left = -66.4254
 offset_top = -119.801
 offset_right = 77.5746
 offset_bottom = -59.8009
+lbl_title = NodePath("title/Label")
 
 [node name="inventory_player" parent="ui/ui_container/windows" instance=ExtResource("1")]
+unique_name_in_owner = true
 layout_mode = 0
+anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -73,10 +80,12 @@ offset_left = -454.0
 offset_top = -103.0
 offset_right = -310.0
 offset_bottom = 71.0
+lbl_title = NodePath("title/Label")
 
 [node name="crafting_list" parent="ui/ui_container/windows" instance=ExtResource("2")]
 visible = false
 layout_mode = 0
+anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -85,9 +94,11 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 144.0
 offset_bottom = 60.0
+lbl_title = NodePath("title/Label")
 
 [node name="player_stats" parent="ui/ui_container/windows" instance=ExtResource("4")]
 layout_mode = 0
+anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -96,9 +107,11 @@ offset_left = -391.0
 offset_top = -241.0
 offset_right = -295.0
 offset_bottom = -189.0
+lbl_title = NodePath("title/Label")
 
 [node name="hotbar" parent="ui/ui_container" instance=ExtResource("10")]
 layout_mode = 0
+anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

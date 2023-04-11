@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://5mwk0bp8eu1"]
 
-[ext_resource path="res://inventory_system/resources/sprites/cooldown.png" type="Texture2D" id=1]
-[ext_resource path="res://inventory_system/resources/font/font_8.tres" type="FontFile" id=2]
-[ext_resource path="res://inventory_system/scripts/ui/cooldown.gd" type="Script" id=3]
+[ext_resource type="Texture2D" uid="uid://bn65gphv6g51s" path="res://inventory_system/resources/sprites/cooldown.png" id="1"]
+[ext_resource type="FontFile" path="res://inventory_system/resources/font/font_8.tres" id="2"]
+[ext_resource type="Script" path="res://inventory_system/scripts/ui/cooldown.gd" id="3"]
 
 [node name="cooldown" type="TextureProgressBar"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
@@ -14,20 +15,16 @@ offset_bottom = 1.0
 mouse_filter = 2
 step = 0.01
 value = 69.0
-texture_progress = ExtResource( 1 )
 fill_mode = 4
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-lbl = NodePath("Label")
+texture_progress = ExtResource("1")
+script = ExtResource("3")
 
 [node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_colors/font_shadow_color = Color( 1, 1, 1, 1 )
-theme_override_fonts/font = ExtResource( 2 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2")
 text = "42"
-align = 1
-valign = 1

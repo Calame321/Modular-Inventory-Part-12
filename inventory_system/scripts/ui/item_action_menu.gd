@@ -1,14 +1,12 @@
 extends Control
 
-@export( NodePath ) onready var item_menu = get_node( item_menu ) as PopupMenu
-
 var actions = []
 var actions_args = []
 
 # Display the menu for the selected item.
 func display( slot_node ):
-	item_menu.global_position = slot_node.global_position
-	item_menu.clear()
+	%item_menu.global_position = slot_node.global_position
+	%item_menu.clear()
 	actions = []
 	actions_args = []
 	
@@ -34,15 +32,15 @@ func display( slot_node ):
 	
 	# If there is actions available.
 	if actions.size() > 0:
-		item_menu.popup()
-		item_menu.size = Vector2.ZERO
+		%item_menu.popup()
+		%item_menu.size = Vector2.ZERO
 
 # Add an action to the list.
 # An Action has a name, functions and optional arguments.
 func add_action( action_name, action, args = [] ):
 	actions.append( action )
 	actions_args.append( args )
-	item_menu.add_item( action_name )
+	%item_menu.add_item( action_name )
 
 # Activate the clicked action.
 func _on_PopupMenu_id_pressed( id ):

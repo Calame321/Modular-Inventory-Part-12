@@ -1,7 +1,5 @@
 extends Window
 
-@export( NodePath ) onready var inventory_container = get_node( inventory_container ) as Control
-
 var current_inventory
 
 func _ready():
@@ -10,7 +8,7 @@ func _ready():
 
 # Remove the inventory node when closed.
 func close():
-	for c in inventory_container.get_children():
+	for c in %inventory_container.get_children():
 		c.queue_free()
 	current_inventory = null
 	hide()
@@ -21,7 +19,7 @@ func _on_inventory_opened( inventory : Inventory ):
 		return
 	
 	var node = ResourceManager.get_instance( "inventory_node" )
-	inventory_container.add_child( node )
+	%inventory_container.add_child( node )
 	node.inventory = inventory
 	current_inventory = inventory
 	show()

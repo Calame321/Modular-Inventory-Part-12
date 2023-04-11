@@ -1,18 +1,26 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://dx30415iqfmdb"]
 
-[ext_resource path="res://inventory_system/scenes/ui/window.tscn" type="PackedScene" id=1]
-[ext_resource path="res://inventory_system/scripts/ui/crafting_list.gd" type="Script" id=2]
+[ext_resource type="PackedScene" uid="uid://q1m2b6ddm1x6" path="res://inventory_system/scenes/ui/window.tscn" id="1"]
+[ext_resource type="Script" path="res://inventory_system/scripts/ui/crafting_list.gd" id="2"]
 
-
-[node name="crafting_list" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
+[node name="crafting_list" instance=ExtResource("1")]
+anchors_preset = 8
+script = ExtResource("2")
 recipe_list = NodePath("recipe_list")
 
+[node name="title" parent="." index="0"]
+layout_mode = 2
+
+[node name="close" parent="title" index="0"]
+layout_mode = 0
+
 [node name="Label" parent="title" index="1"]
+layout_mode = 0
 text = "Crafting"
 
+[node name="title" parent="title/Label" index="0"]
+layout_mode = 0
+
 [node name="recipe_list" type="VBoxContainer" parent="." index="1"]
-offset_left = 9.0
-offset_top = 9.0
-offset_right = 135.0
-offset_bottom = 51.0
+unique_name_in_owner = true
+layout_mode = 2

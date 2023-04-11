@@ -1,7 +1,5 @@
 class_name Item_Node extends TextureRect
 
-@export ( NodePath ) onready var lbl_quantity = get_node( lbl_quantity ) as Label
-
 var item : Item
 
 # Draw the item and connect signals.
@@ -33,5 +31,5 @@ func _on_depleted():
 
 # Update the quantity label when it changes.
 func _on_quantity_changed( value ):
-	lbl_quantity.text = str( value )
-	lbl_quantity.visible = value > 1
+	%quantity.text = str( value )
+	%quantity.visible = value > 1

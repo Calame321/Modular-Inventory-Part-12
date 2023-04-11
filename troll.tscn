@@ -30,6 +30,7 @@ shape = SubResource("1")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="interactable_zone" type="Area2D" parent="."]
+unique_name_in_owner = true
 collision_layer = 8
 collision_mask = 0
 
@@ -38,6 +39,7 @@ rotation = -1.57079
 shape = SubResource("2")
 
 [node name="interactable labels" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -50,18 +52,15 @@ offset_right = 102.0
 offset_bottom = -75.0
 pivot_offset = Vector2(102, 25)
 script = ExtResource("3")
-__meta__ = {
-"_edit_use_anchors_": false
-}
-lbl_action = NodePath("action")
-lbl_name = NodePath("object_name")
 
 [node name="action" type="Label" parent="interactable labels"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4")
 text = "Press \"e\" to *action*"
 
 [node name="object_name" type="Label" parent="interactable labels"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5")
 text = "object name!"

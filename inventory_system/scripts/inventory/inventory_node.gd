@@ -1,8 +1,5 @@
 class_name Inventory_Node extends InnerPanel
 
-## Exports ##
-@export( NodePath ) onready var slot_container = get_node( slot_container ) as Control
-
 ## Variables ##
 var is_open = false
 var slots_node : Array = []
@@ -22,5 +19,5 @@ func set_inventory( value ):
 func draw_slots():
 	for s in inventory.slots:
 		var slot_node = ResourceManager.get_instance( "inventory_slot_node" )
-		slot_container.add_child( slot_node )
+		%slot_container.add_child( slot_node )
 		slot_node.slot = s

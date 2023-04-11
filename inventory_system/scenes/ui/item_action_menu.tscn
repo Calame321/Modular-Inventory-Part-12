@@ -1,31 +1,38 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://ducqtpe60fduc"]
 
-[ext_resource path="res://inventory_system/resources/font/Arcadepix Plus.ttf" type="FontFile" id=1]
-[ext_resource path="res://inventory_system/resources/sprites/inner_panel.png" type="Texture2D" id=2]
-[ext_resource path="res://inventory_system/scripts/ui/item_action_menu.gd" type="Script" id=3]
+[ext_resource type="FontFile" uid="uid://c2wbhmvt6pm3k" path="res://inventory_system/resources/font/Arcadepix Plus.ttf" id="1"]
+[ext_resource type="Texture2D" uid="uid://ddwobnon6ksr7" path="res://inventory_system/resources/sprites/inner_panel.png" id="2"]
+[ext_resource type="Script" path="res://inventory_system/scripts/ui/item_action_menu.gd" id="3"]
 
+[sub_resource type="FontFile" id="1"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id=1]
-size = 8
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 18, 18 )
-offset_left = 8.0
-offset_right = 8.0
-offset_top = 8.0
-offset_bottom = 8.0
+[sub_resource type="StyleBoxTexture" id="2"]
+texture = ExtResource("2")
+region_rect = Rect2(0, 0, 18, 18)
 
 [node name="item_action_menu" type="Control"]
-script = ExtResource( 3 )
-item_menu = NodePath("PopupMenu")
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("3")
+item_menu = NodePath("item_menu")
 
-[node name="PopupMenu" type="PopupMenu" parent="."]
-offset_right = 20.0
-offset_bottom = 20.0
-theme_override_colors/font_color = Color( 0.423529, 0.247059, 0.121569, 1 )
-theme_override_fonts/font = SubResource( 1 )
-theme_override_styles/panel = SubResource( 2 )
+[node name="item_menu" type="PopupMenu" parent="."]
+unique_name_in_owner = true
+theme_override_colors/font_color = Color(0.423529, 0.247059, 0.121569, 1)
+theme_override_fonts/font = SubResource("1")
+theme_override_styles/panel = SubResource("2")
 
-[connection signal="id_pressed" from="PopupMenu" to="." method="_on_PopupMenu_id_pressed"]
+[connection signal="id_pressed" from="item_menu" to="." method="_on_PopupMenu_id_pressed"]

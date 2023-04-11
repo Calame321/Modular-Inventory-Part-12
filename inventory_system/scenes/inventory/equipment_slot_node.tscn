@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://ctnbgcbg75hd0"]
 
-[ext_resource path="res://inventory_system/scripts/inventory/equipment_slot_node.gd" type="Script" id=1]
-[ext_resource path="res://inventory_system/scenes/inventory/inventory_slot_node.tscn" type="PackedScene" id=2]
+[ext_resource type="Script" path="res://inventory_system/scripts/inventory/equipment_slot_node.gd" id="1"]
+[ext_resource type="PackedScene" path="res://inventory_system/scenes/inventory/inventory_slot_node.tscn" id="2"]
 
-[node name="equipment_slot" instance=ExtResource( 2 )]
-script = ExtResource( 1 )
+[node name="equipment_slot" instance=ExtResource("2")]
+script = ExtResource("1")
 placeholder = NodePath("placeholder")
 
+[node name="item_container" parent="." index="0"]
+layout_mode = 0
+
 [node name="placeholder" type="TextureRect" parent="." index="1"]
+unique_name_in_owner = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
