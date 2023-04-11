@@ -1,1 +1,7 @@
+res://troll.tscn
+res://tileset.tres
+res://inventory_system/scenes/interactables/floor_item.tscn
+res://inventory_system/scenes/interactables/interactable_chest.tscn
+res://inventory_system/scenes/interactables/crafting_table.tscn
+res://dungeon.tscn
 res://scenes/main.tscn

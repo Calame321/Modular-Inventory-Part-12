@@ -1,26 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://ctfef0pi3e84l"]
 
-[ext_resource path="res://inventory_system/scripts/interactables/crafting_table.gd" type="Script" id=1]
-[ext_resource path="res://inventory_system/resources/sprites/interactables/table.png" type="Texture2D" id=2]
+[ext_resource type="Script" path="res://inventory_system/scripts/interactables/crafting_table.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bf67y0odjjbsp" path="res://inventory_system/resources/sprites/interactables/table.png" id="2"]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 43.275
-height = 7.53586
+[sub_resource type="CapsuleShape2D" id="1"]
+radius = 45.275
+height = 90.55
 
 [node name="crafting table" type="Area2D"]
 collision_layer = 0
 collision_mask = 8
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -5, 7 )
+position = Vector2(-5, 7)
 rotation = -1.0472
-shape = SubResource( 1 )
+shape = SubResource("1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array( 0, 38, -30, 23, -30, -4, -1, -28, 29, -2, 30, 23 )
+polygon = PackedVector2Array(0, 38, -30, 23, -30, -4, -1, -28, 29, -2, 30, 23)

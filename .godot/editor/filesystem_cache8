@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1681230848
+::res://::1681231311
 dungeon.tscn::PackedScene::-1::1681228247::0::1::::<><>::res://tileset.tres<>res://troll.tscn<>res://inventory_system/scenes/interactables/floor_item.tscn<>res://inventory_system/scenes/interactables/interactable_chest.tscn<>res://inventory_system/scenes/interactables/random_chest.tscn<>res://inventory_system/scenes/interactables/treasure_chest.tscn<>res://inventory_system/resources/sprites/items/gold_coin.png<>res://inventory_system/resources/sprites/items/wood.png<>res://inventory_system/resources/sprites/items/rock.png<>res://inventory_system/scenes/interactables/crafting_table.tscn<>res://inventory_system/scripts/resources/inventory.gd
 icon.png::CompressedTexture2D::2892481096181836912::1669164672::1681229831::1::::<><>::
 isotiles.png::CompressedTexture2D::8843277153011347919::1669164672::1681229832::1::::<><>::
@@ -171,5 +171,5 @@ settings.gd::GDScript::-1::1681228247::0::1::::<>Window<>::
 split_stack.gd::GDScript::-1::1681228247::0::1::::Split_Stack<>Scale_Control<>::
 ui_container.gd::GDScript::-1::1681228247::0::1::::<>Control<>::
 window.gd::GDScript::-1::1681228247::0::1::::Window<>Dragable_Control<>::
-::res://scenes/::1681228223
-main.tscn::PackedScene::-1::1681228247::0::1::::<><>::res://inventory_system/scenes/ui/inventory_player.tscn<>res://inventory_system/scenes/ui/crafting_list.tscn<>res://inventory_system/scenes/ui/inventory_container.tscn<>res://inventory_system/scenes/ui/player_stats_window.tscn<>res://inventory_system/scenes/ui/settings.tscn<>res://inventory_system/scripts/ui/ui_container.gd<>res://inventory_system/scenes/inventory/hotbar_node.tscn<>res://dungeon.tscn
+::res://scenes/::1681230961
+main.tscn::PackedScene::3254641109878597044::1681230961::0::1::::<><>::res://inventory_system/scenes/ui/inventory_player.tscn<>res://inventory_system/scenes/ui/crafting_list.tscn<>res://inventory_system/scenes/ui/inventory_container.tscn<>res://inventory_system/scenes/ui/player_stats_window.tscn<>res://inventory_system/scenes/ui/settings.tscn<>res://inventory_system/scripts/ui/ui_container.gd<>res://inventory_system/scenes/inventory/hotbar_node.tscn<>res://dungeon.tscn
