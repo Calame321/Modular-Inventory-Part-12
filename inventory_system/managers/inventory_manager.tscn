@@ -2,7 +2,7 @@
 
 [ext_resource path="res://inventory_system/scenes/ui/item_info.tscn" type="PackedScene" id=1]
 [ext_resource path="res://inventory_system/scenes/ui/split_stack.tscn" type="PackedScene" id=2]
-[ext_resource path="res://inventory_system/resources/sprites/inner_panel.png" type="Texture" id=3]
+[ext_resource path="res://inventory_system/resources/sprites/inner_panel.png" type="Texture2D" id=3]
 [ext_resource path="res://inventory_system/scenes/ui/item_action_menu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://inventory_system/managers/inventory_manager.gd" type="Script" id=5]
 [ext_resource path="res://inventory_system/managers/item_in_hand.gd" type="Script" id=6]
@@ -11,10 +11,10 @@
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 18, 18 )
-margin_left = 8.0
-margin_right = 8.0
-margin_top = 8.0
-margin_bottom = 8.0
+offset_left = 8.0
+offset_right = 8.0
+offset_top = 8.0
+offset_bottom = 8.0
 
 [node name="inventory_manager" type="CanvasLayer"]
 script = ExtResource( 5 )
@@ -26,10 +26,10 @@ item_menu = NodePath("item_action_menu")
 player_data = ExtResource( 7 )
 
 [node name="hidden_nodes" type="Control" parent="."]
-margin_left = 5000.0
-margin_top = 5000.0
-margin_right = 5040.0
-margin_bottom = 5040.0
+offset_left = 5000.0
+offset_top = 5000.0
+offset_right = 5040.0
+offset_bottom = 5040.0
 
 [node name="item_in_hand" type="Control" parent="."]
 mouse_filter = 2
@@ -37,11 +37,11 @@ script = ExtResource( 6 )
 
 [node name="item_info" parent="." instance=ExtResource( 1 )]
 visible = false
-margin_left = 551.5
-margin_top = 324.5
-margin_right = 634.5
-margin_bottom = 351.5
-custom_styles/panel = SubResource( 2 )
+offset_left = 551.5
+offset_top = 324.5
+offset_right = 634.5
+offset_bottom = 351.5
+theme_override_styles/panel = SubResource( 2 )
 
 [node name="item_action_menu" parent="." instance=ExtResource( 4 )]
 

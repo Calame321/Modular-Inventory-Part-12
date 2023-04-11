@@ -46,7 +46,7 @@ var tscn = {
 	"equipment_node": preload( "res://inventory_system/scenes/inventory/equipment_node.tscn" )
 }
 
-onready var placeholders = {
+@onready var placeholders = {
 	Game_Enums.EQUIPMENT_TYPE.HEAD : preload( "res://inventory_system/resources/sprites/placeholder_head.png" ),
 	Game_Enums.EQUIPMENT_TYPE.CHEST : preload( "res://inventory_system/resources/sprites/placeholder_chest.png" ),
 	Game_Enums.EQUIPMENT_TYPE.MAIN_HAND : preload( "res://inventory_system/resources/sprites/placeholder_main_hand.png" ),
@@ -60,19 +60,23 @@ func _ready():
 	# Load the stats
 	var file = File.new()
 	file.open( STAT_PATH, File.READ )
-	var data = parse_json( file.get_as_text() )
+	var test_json_conv = JSON.new()
+	test_json_conv.parse( file.get_as_text() )
+	var data = test_json_conv.get_data()
 	for stat in data:
 		stat_info[ Game_Enums.STAT[ stat ] ] = data[ stat ]
 	file.close()
 	
 	# Load the recipes
 	file.open( RECIPE_PATH, File.READ )
-	recipes_info = parse_json( file.get_as_text() )
+	var test_json_conv = JSON.new()
+	test_json_conv.parse( file.get_as_text() )
+	recipes_info = test_json_conv.get_data()
 	file.close()
 
 # Get a prefab scene instance from it's id.
 func get_instance( id ):
-	return tscn[ id ].instance()
+	return tscn[ id ].instantiate()
 
 # Get the recipe from it's id.
 func get_recipes( id ):
@@ -84,7 +88,7 @@ func get_placeholder( id ):
 
 # Get the item node to be displayed in a slot.
 func get_item_node( item ):
-	var item_node = tscn.item_node.instance()
+	var item_node = tscn.item_node.instantiate()
 	item_node.item = item
 	item_node.texture = sprites[ item.id ]
 	return item_node

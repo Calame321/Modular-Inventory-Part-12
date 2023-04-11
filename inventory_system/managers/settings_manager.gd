@@ -1,18 +1,18 @@
 extends Node
 
-var fullscreen setget set_fullscreen
-var scale setget set_scale
+var fullscreen : set = set_fullscreen
+var scale : set = set_scale
 var settings_data : Settings_Data
 
 func _ready():
 	settings_data = preload( "res://inventory_system/data/resources/settings_data.tres" )
 	scale = settings_data.scale
 	fullscreen = settings_data.fullscreen
-	settings_data.connect( "changed", self, "_on_data_changed" )
+	settings_data.connect("changed", Callable(self, "_on_data_changed"))
 
 func set_fullscreen( value ):
 	fullscreen = value
-	OS.window_fullscreen = value
+	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (value) else Window.MODE_WINDOWED
 	settings_data.fullscreen = value
 
 func set_scale( value ):

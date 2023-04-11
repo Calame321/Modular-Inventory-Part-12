@@ -27,13 +27,13 @@ func set_item( new_item ):
 func unset_old_item():
 	if item:
 		item.slot = null
-		item.disconnect( "depleted", self, "_on_item_depleted" )
+		item.disconnect("depleted", Callable(self, "_on_item_depleted"))
 
 # Add the slot to the node and connect signals.
 func set_new_item():
 	if item:
 		item.slot = self
-		item.connect( "depleted", self, "_on_item_depleted" )
+		item.connect("depleted", Callable(self, "_on_item_depleted"))
 
 # Check if the item can go in the slot.
 func accept_item( new_item ) -> bool:

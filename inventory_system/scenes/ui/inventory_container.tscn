@@ -5,19 +5,19 @@
 
 
 [node name="inventory_container" instance=ExtResource( 1 )]
-margin_bottom = -9.0
+offset_bottom = -9.0
 script = ExtResource( 8 )
 inventory_container = NodePath("inventory_container")
 
 [node name="title" parent="." index="0"]
-margin_bottom = 11.0
+offset_bottom = 11.0
 
 [node name="Label" parent="title" index="1"]
 text = "Inventory"
 
 [node name="inventory_container" type="VBoxContainer" parent="." index="1"]
-margin_left = 9.0
-margin_top = 9.0
-margin_right = 135.0
-margin_bottom = 11.0
-custom_constants/separation = 1
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 135.0
+offset_bottom = 11.0
+theme_override_constants/separation = 1

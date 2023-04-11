@@ -18,7 +18,7 @@ var item : Item
 func _init( data, parent_item ):
 	item = parent_item
 	set_data( data )
-	SignalManager.connect( "inventory_group_content_changed", self, "_on_inventory_group_content_changed" )
+	SignalManager.connect("inventory_group_content_changed", Callable(self, "_on_inventory_group_content_changed"))
 
 # Set the base data.
 func set_data( data ):

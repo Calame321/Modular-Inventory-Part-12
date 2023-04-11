@@ -9,10 +9,10 @@ signal content_changed()
 signal size_changed()
 
 ## Variables ##
-export( String ) var name
-export( int ) var size = 0 setget set_inventory_size
+@export var name # ( String )
+@export var size = 0: set = set_inventory_size
 
-var groups : Array = [] setget set_groups
+var groups : Array = []: set = set_groups
 var slots : Array = []
 var has_upgradable_items = false
 
@@ -30,7 +30,7 @@ func set_inventory_size( value ):
 			var slot = get_new_slot( s )
 			slot.groups = groups
 			slots.append( slot )
-			slot.connect( "item_changed", self, "_on_item_changed" )
+			slot.connect("item_changed", Callable(self, "_on_item_changed"))
 	emit_signal( "size_changed" )
 
 # Set it's own and the slots' groups.

@@ -1,6 +1,6 @@
 extends Chest
 
-export( int ) var number_of_items
+@export var number_of_items # ( int )
 
 # Randomly pick an item from the loot table and roll for rarity and stats.
 func set_items():

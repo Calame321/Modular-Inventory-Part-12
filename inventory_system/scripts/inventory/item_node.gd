@@ -1,17 +1,17 @@
 class_name Item_Node extends TextureRect
 
-export ( NodePath ) onready var lbl_quantity = get_node( lbl_quantity ) as Label
+@export ( NodePath ) onready var lbl_quantity = get_node( lbl_quantity ) as Label
 
 var item : Item
 
 # Draw the item and connect signals.
 func _ready():
 	_on_quantity_changed( item.quantity )
-	item.connect( "quantity_changed", self, "_on_quantity_changed" )
-	item.connect( "depleted", self, "_on_depleted" )
+	item.connect("quantity_changed", Callable(self, "_on_quantity_changed"))
+	item.connect("depleted", Callable(self, "_on_depleted"))
 	
 	if item.components.has( "usable" ):
-		SignalManager.connect( "cooldown_started", self, "_on_cooldown_started" )
+		SignalManager.connect("cooldown_started", Callable(self, "_on_cooldown_started"))
 		
 		if item.components.usable.is_in_cooldown:
 			set_cooldown()

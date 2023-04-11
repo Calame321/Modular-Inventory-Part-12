@@ -13,8 +13,8 @@ player_data = ExtResource( 2 )
 text = "Player's Inventory"
 
 [node name="inventory_container" type="VBoxContainer" parent="." index="1"]
-margin_left = 9.0
-margin_top = 9.0
-margin_right = 135.0
-margin_bottom = 51.0
-custom_constants/separation = 2
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 135.0
+offset_bottom = 51.0
+theme_override_constants/separation = 2

@@ -38,17 +38,23 @@ func _ready():
 	
 	# items
 	file.open( ITEM_PATH, File.READ )
-	items = parse_json( file.get_as_text() )
+	var test_json_conv = JSON.new()
+	test_json_conv.parse( file.get_as_text() )
+	items = test_json_conv.get_data()
 	file.close()
 	
 	# names
 	file.open( RARE_NAMES_PATH, File.READ )
-	rare_names = parse_json(file.get_as_text())
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(file.get_as_text())
+	rare_names = test_json_conv.get_data()
 	file.close()
 	
 	# affixes group
 	file.open( AFFIXES_PATH, File.READ )
-	var data = parse_json( file.get_as_text() )
+	var test_json_conv = JSON.new()
+	test_json_conv.parse( file.get_as_text() )
+	var data = test_json_conv.get_data()
 	for id in data:
 		affix_groups[ id ] = Affix_Group.new( id, data[ id ] )
 	file.close()

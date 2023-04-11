@@ -10,7 +10,7 @@ var name : String
 var rarity = Game_Enums.RARITY.NORMAL
 var equipment_type = Game_Enums.EQUIPMENT_TYPE.NONE
 var stack_size : int = 1
-var quantity : int = 1 setget set_quantity
+var quantity : int = 1: set = set_quantity
 var level : int = 1
 var components = {}
 var unique_data = null

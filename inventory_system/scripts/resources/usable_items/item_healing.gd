@@ -2,8 +2,9 @@ class_name Item_Healing extends Item_Usable
 
 var healing_amount
 
-func _init( data, parent_item ).( data, parent_item ):
-	SignalManager.connect( "player_life_changed", self, "_on_player_life_changed")
+func _init( data, parent_item ):
+	super( data, parent_item )
+	SignalManager.connect("player_life_changed", Callable(self, "_on_player_life_changed"))
 	on_use_text = "Heal %s life points."
 	condition = "Need healing."
 	can_always_use = true
@@ -11,7 +12,7 @@ func _init( data, parent_item ).( data, parent_item ):
 # Set the healing amount.
 func set_data( data ):
 	healing_amount = data.healing
-	.set_data( data )
+	super.set_data( data )
 
 # Show the healing amount.
 func get_use_text():

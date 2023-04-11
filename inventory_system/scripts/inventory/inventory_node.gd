@@ -1,12 +1,12 @@
 class_name Inventory_Node extends InnerPanel
 
 ## Exports ##
-export( NodePath ) onready var slot_container = get_node( slot_container ) as Control
+@export( NodePath ) onready var slot_container = get_node( slot_container ) as Control
 
 ## Variables ##
 var is_open = false
 var slots_node : Array = []
-var inventory : Inventory setget set_inventory
+var inventory : Inventory: set = set_inventory
 
 ## Setters ##
 func set_inventory( value ):

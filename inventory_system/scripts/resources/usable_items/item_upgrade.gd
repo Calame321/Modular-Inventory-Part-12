@@ -1,6 +1,7 @@
 class_name Item_Upgrade extends Item_Usable
 
-func _init( data, parent_item ).( data, parent_item ):
+func _init( data, parent_item ):
+	super( data, parent_item )
 	on_use_text = "Uprade an item to mag or rare."
 	condition = "Have an item that is normal or magic in your inventory."
 

@@ -10,11 +10,11 @@ size = 0
 slot_container = NodePath("MarginContainer/slot_container")
 
 [node name="slot_container" type="GridContainer" parent="MarginContainer" index="0"]
-margin_top = 6.0
-margin_right = 69.0
-margin_bottom = 24.0
-custom_constants/vseparation = 2
-custom_constants/hseparation = 2
+offset_top = 6.0
+offset_right = 69.0
+offset_bottom = 24.0
+theme_override_constants/v_separation = 2
+theme_override_constants/h_separation = 2
 columns = 10
 __meta__ = {
 "_edit_use_anchors_": false

@@ -26,7 +26,7 @@ func load_game():
 
 func save_game():
 	SignalManager.emit_signal( "saving_game" )
-	var dir = Directory.new()
+	var dir = DirAccess.new()
 	
 	if not dir.dir_exists( SAVE_FOLDER ):
 		dir.make_dir_recursive( SAVE_FOLDER )

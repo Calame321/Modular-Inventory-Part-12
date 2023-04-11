@@ -1,12 +1,12 @@
 extends Window
 
-export( NodePath ) onready var inventory_container = get_node( inventory_container ) as Control
+@export( NodePath ) onready var inventory_container = get_node( inventory_container ) as Control
 
 var current_inventory
 
 func _ready():
-	SignalManager.connect( "inventory_opened", self, "_on_inventory_opened" )
-	SignalManager.connect( "inventory_closed", self, "_on_inventory_closed" )
+	SignalManager.connect("inventory_opened", Callable(self, "_on_inventory_opened"))
+	SignalManager.connect("inventory_closed", Callable(self, "_on_inventory_closed"))
 
 # Remove the inventory node when closed.
 func close():

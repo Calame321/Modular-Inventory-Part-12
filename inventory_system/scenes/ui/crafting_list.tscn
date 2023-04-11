@@ -12,7 +12,7 @@ recipe_list = NodePath("recipe_list")
 text = "Crafting"
 
 [node name="recipe_list" type="VBoxContainer" parent="." index="1"]
-margin_left = 9.0
-margin_top = 9.0
-margin_right = 135.0
-margin_bottom = 51.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 135.0
+offset_bottom = 51.0

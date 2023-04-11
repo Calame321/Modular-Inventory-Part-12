@@ -1,6 +1,6 @@
-extends TextureProgress
+extends TextureProgressBar
 
-export( NodePath ) onready var lbl = get_node( lbl ) as Label
+@export( NodePath ) onready var lbl = get_node( lbl ) as Label
 
 var item_usable
 

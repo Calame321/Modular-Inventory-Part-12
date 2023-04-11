@@ -1,13 +1,13 @@
 extends Scale_Control
 
-export( NodePath ) onready var item_menu = get_node( item_menu ) as PopupMenu
+@export( NodePath ) onready var item_menu = get_node( item_menu ) as PopupMenu
 
 var actions = []
 var actions_args = []
 
 # Display the menu for the selected item.
 func display( slot_node ):
-	item_menu.rect_global_position = slot_node.rect_global_position
+	item_menu.global_position = slot_node.global_position
 	item_menu.clear()
 	actions = []
 	actions_args = []
@@ -35,7 +35,7 @@ func display( slot_node ):
 	# If there is actions available.
 	if actions.size() > 0:
 		item_menu.popup()
-		item_menu.rect_size = Vector2.ZERO
+		item_menu.size = Vector2.ZERO
 
 # Add an action to the list.
 # An Action has a name, functions and optional arguments.

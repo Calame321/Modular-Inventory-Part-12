@@ -1,6 +1,6 @@
 extends Scale_Control
 
-var item : Item setget set_item
+var item : Item: set = set_item
 
 #Set the dragged item.
 func set_item( value ):

@@ -8,7 +8,7 @@ func _init():
 	slots.append( Equipment_Slot.new( 3, self, Game_Enums.EQUIPMENT_TYPE.MAIN_HAND ) )
 	
 	for slot in slots:
-		slot.connect( "item_changed", self, "_on_item_changed" )
+		slot.connect("item_changed", Callable(self, "_on_item_changed"))
 
 # Get the total of the given stat from all equipped items.
 func get_stat( stat ):

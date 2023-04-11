@@ -1,14 +1,14 @@
 extends Node
 
 ## Exports ##
-export( NodePath ) onready var item_in_hand_node = get_node( item_in_hand_node ) as Control
-export( NodePath ) onready var item_info = get_node( item_info ) as Control
-export( NodePath ) onready var item_void = get_node( item_void ) as Control
-export( NodePath ) onready var split_stack = get_node( split_stack ) as Split_Stack
-export( NodePath ) onready var item_menu = get_node( item_menu ) as Control
+@export( NodePath ) onready var item_in_hand_node = get_node( item_in_hand_node ) as Control
+@export( NodePath ) onready var item_info = get_node( item_info ) as Control
+@export( NodePath ) onready var item_void = get_node( item_void ) as Control
+@export( NodePath ) onready var split_stack = get_node( split_stack ) as Split_Stack
+@export( NodePath ) onready var item_menu = get_node( item_menu ) as Control
 
 ## Variables ##
-export( Resource ) var player_data
+@export var player_data # ( Resource )
 
 var inventory_groups : Dictionary = {}
 var item_offset = Vector2.ZERO
@@ -20,13 +20,13 @@ func _ready():
 	add_inventory( player_data.inventory_left )
 	add_inventory( player_data.inventory_right )
 	
-	split_stack.connect( "stack_splitted", self, "_on_stack_splitted" )
-	item_void.connect( "gui_input", self, "_on_void_gui_input" )
-	SignalManager.connect( "upgrade_item", self, "_on_upgrade_item" )
+	split_stack.connect("stack_splitted", Callable(self, "_on_stack_splitted"))
+	item_void.connect("gui_input", Callable(self, "_on_void_gui_input"))
+	SignalManager.connect("upgrade_item", Callable(self, "_on_upgrade_item"))
 
 func _input( event : InputEvent ):
 	if event is InputEventMouseMotion and item_in_hand_node.item:
-		item_in_hand_node.rect_position = ( event.position - item_offset )
+		item_in_hand_node.position = ( event.position - item_offset )
 
 ## Functions ##
 
@@ -35,7 +35,7 @@ func set_hand_position( pos ):
 	set_item_void_filter()
 	
 	if item_in_hand_node:
-		item_in_hand_node.rect_position = ( pos - item_offset )
+		item_in_hand_node.position = ( pos - item_offset )
 
 # Set the control that will catch if you drop an item.
 func set_item_void_filter():
@@ -61,7 +61,7 @@ func add_items( items, group_id ):
 
 # Add an inventory to a group, or create a new group.
 func add_inventory( inv ) -> void:
-	inv.connect( "content_changed", self, "_on_inventory_content_changed" )
+	inv.connect("content_changed", Callable(self, "_on_inventory_content_changed"))
 	
 	for g in inv.groups:
 		if not inventory_groups.has( g ):
@@ -133,11 +133,11 @@ func _on_stack_splitted( slot_node, new_quantity ):
 	var new_item = ItemManager.get_item( slot_node.slot.item.id )
 	new_item.quantity = new_quantity
 	item_in_hand_node.item = new_item
-	set_hand_position( slot_node.rect_global_position )
+	set_hand_position( slot_node.global_position )
 
 # When an item is clicked in the void, drop it.
 func _on_void_gui_input( event ):
-	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		SignalManager.emit_signal( "item_dropped", item_in_hand_node.item )
 		item_in_hand_node.item = null
 		set_item_void_filter()
@@ -157,22 +157,22 @@ func _on_mouse_exited_slot():
 # Right Click = Open Action Menu.
 func _on_gui_input_slot( event : InputEvent, slot_node : Inventory_Slot_Node ):
 	var slot = slot_node.slot
-	if slot.item and slot.item.quantity > 1 and item_in_hand_node.item == null and event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_RIGHT and Input.is_key_pressed( KEY_SHIFT ):
+	if slot.item and slot.item.quantity > 1 and item_in_hand_node.item == null and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT and Input.is_key_pressed( KEY_SHIFT ):
 		split( slot_node )
 	elif event is InputEventMouseButton and event.pressed:
-		if event.button_index == BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_LEFT:
 			var had_empty_hand = item_in_hand_node.item == null
 			
 			item_in_hand_node.item = slot.put_item( item_in_hand_node.item )
 			
 			if item_in_hand_node.item and had_empty_hand:
-				item_offset = event.global_position - slot_node.rect_global_position
+				item_offset = event.global_position - slot_node.global_position
 			
 			set_hand_position( event.global_position )
 		
-		elif event.button_index == BUTTON_RIGHT and slot.item:
+		elif event.button_index == MOUSE_BUTTON_RIGHT and slot.item:
 			item_menu.display( slot_node )
-		elif event.button_index == BUTTON_RIGHT and slot.item and slot.item.components.has( "usable" ):
+		elif event.button_index == MOUSE_BUTTON_RIGHT and slot.item and slot.item.components.has( "usable" ):
 			slot.item.components.usable.use()
 	
 	if slot.item:

@@ -1,10 +1,10 @@
 extends Window
 
-export ( NodePath ) onready var recipe_list = get_node( recipe_list ) as VBoxContainer
+@export ( NodePath ) onready var recipe_list = get_node( recipe_list ) as VBoxContainer
 
 func _ready():
-	SignalManager.connect( "crafting_opened", self, "_on_crafting_opened" )
-	SignalManager.connect( "crafting_out_of_range", self, "_on_crafting_out_of_range" )
+	SignalManager.connect("crafting_opened", Callable(self, "_on_crafting_opened"))
+	SignalManager.connect("crafting_out_of_range", Callable(self, "_on_crafting_out_of_range"))
 
 # Display the list of recipes.
 func display( recipes ):
@@ -18,11 +18,11 @@ func display( recipes ):
 		recipe_node.set_info( recipe_id, recipes[ recipe_id ].price, recipes[ recipe_id ].produce )
 	
 	show()
-	rect_size = Vector2( 140, 0 )
+	size = Vector2( 140, 0 )
 
 # When closed, set the shop opened to false.
 func close():
-	.close()
+	super.close()
 	InventoryManager.is_shop_open = false
 
 # When opened, display the ui, and if it's a shop, allow selling.

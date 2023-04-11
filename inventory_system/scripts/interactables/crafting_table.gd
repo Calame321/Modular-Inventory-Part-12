@@ -1,6 +1,6 @@
 extends Area2D
 
-export( String ) var crafting_list
+@export var crafting_list # ( String )
 
 var action = "craft"
 var object_name = crafting_list

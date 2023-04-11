@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://inventory_system/resources/sprites/inner_panel.png" type="Texture" id=1]
+[ext_resource path="res://inventory_system/resources/sprites/inner_panel.png" type="Texture2D" id=1]
 [ext_resource path="res://inventory_system/scenes/ui/window.tscn" type="PackedScene" id=2]
 [ext_resource path="res://inventory_system/data/resources/settings_data.tres" type="Resource" id=3]
-[ext_resource path="res://inventory_system/resources/font/Arcadepix Plus.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://inventory_system/resources/font/Arcadepix Plus.ttf" type="FontFile" id=8]
 [ext_resource path="res://inventory_system/scripts/ui/settings.gd" type="Script" id=9]
 
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="FontFile" id=2]
 size = 8
 font_data = ExtResource( 8 )
 
@@ -20,25 +20,25 @@ lbl_max = NodePath("setting list/scale/max")
 settings_data = ExtResource( 3 )
 
 [node name="title" parent="." index="0"]
-margin_bottom = 71.0
+offset_bottom = 71.0
 
 [node name="Label" parent="title" index="1"]
 text = "Settings"
 
 [node name="setting list" type="VBoxContainer" parent="." index="1"]
-margin_left = 9.0
-margin_top = 9.0
-margin_right = 135.0
-margin_bottom = 71.0
-custom_constants/separation = 2
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 135.0
+offset_bottom = 71.0
+theme_override_constants/separation = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="scale" type="NinePatchRect" parent="setting list" index="0"]
-margin_right = 126.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 0, 30 )
+offset_right = 126.0
+offset_bottom = 30.0
+custom_minimum_size = Vector2( 0, 30 )
 texture = ExtResource( 1 )
 patch_margin_left = 8
 patch_margin_top = 8
@@ -51,12 +51,12 @@ __meta__ = {
 [node name="Label" type="Label" parent="setting list/scale" index="0"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -59.0
-margin_top = 4.0
-margin_right = 59.0
-margin_bottom = 10.0
-custom_colors/font_color = Color( 0.423529, 0.247059, 0.121569, 1 )
-custom_fonts/font = SubResource( 2 )
+offset_left = -59.0
+offset_top = 4.0
+offset_right = 59.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color( 0.423529, 0.247059, 0.121569, 1 )
+theme_override_fonts/font = SubResource( 2 )
 text = "- Scale -"
 align = 1
 valign = 1
@@ -67,12 +67,12 @@ __meta__ = {
 [node name="min" type="Label" parent="setting list/scale" index="1"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -56.0
-margin_top = 4.0
-margin_right = -24.0
-margin_bottom = 10.0
-custom_colors/font_color = Color( 0.423529, 0.247059, 0.121569, 1 )
-custom_fonts/font = SubResource( 2 )
+offset_left = -56.0
+offset_top = 4.0
+offset_right = -24.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color( 0.423529, 0.247059, 0.121569, 1 )
+theme_override_fonts/font = SubResource( 2 )
 text = "Min: #"
 valign = 1
 __meta__ = {
@@ -82,12 +82,12 @@ __meta__ = {
 [node name="max" type="Label" parent="setting list/scale" index="2"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 25.0
-margin_top = 4.0
-margin_right = 57.0
-margin_bottom = 10.0
-custom_colors/font_color = Color( 0.423529, 0.247059, 0.121569, 1 )
-custom_fonts/font = SubResource( 2 )
+offset_left = 25.0
+offset_top = 4.0
+offset_right = 57.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color( 0.423529, 0.247059, 0.121569, 1 )
+theme_override_fonts/font = SubResource( 2 )
 text = "Max: #"
 align = 2
 valign = 1
@@ -99,10 +99,10 @@ __meta__ = {
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 7.0
-margin_top = -6.0
-margin_right = -6.0
-margin_bottom = 10.0
+offset_left = 7.0
+offset_top = -6.0
+offset_right = -6.0
+offset_bottom = 10.0
 min_value = 0.5
 max_value = 3.5
 step = 0.1
@@ -112,10 +112,10 @@ __meta__ = {
 }
 
 [node name="fullscreen" type="NinePatchRect" parent="setting list" index="1"]
-margin_top = 32.0
-margin_right = 126.0
-margin_bottom = 62.0
-rect_min_size = Vector2( 0, 30 )
+offset_top = 32.0
+offset_right = 126.0
+offset_bottom = 62.0
+custom_minimum_size = Vector2( 0, 30 )
 texture = ExtResource( 1 )
 patch_margin_left = 8
 patch_margin_top = 8
@@ -128,12 +128,12 @@ __meta__ = {
 [node name="Label" type="Label" parent="setting list/fullscreen" index="0"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -59.0
-margin_top = 4.0
-margin_right = 59.0
-margin_bottom = 10.0
-custom_colors/font_color = Color( 0.423529, 0.247059, 0.121569, 1 )
-custom_fonts/font = SubResource( 2 )
+offset_left = -59.0
+offset_top = 4.0
+offset_right = 59.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color( 0.423529, 0.247059, 0.121569, 1 )
+theme_override_fonts/font = SubResource( 2 )
 text = "- Fullscreen -"
 align = 1
 valign = 1
@@ -146,10 +146,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -12.0
-margin_top = -8.14029
-margin_right = 12.0
-margin_bottom = 15.8597
+offset_left = -12.0
+offset_top = -8.14029
+offset_right = 12.0
+offset_bottom = 15.8597
 __meta__ = {
 "_edit_use_anchors_": false
 }

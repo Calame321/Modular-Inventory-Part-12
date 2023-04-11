@@ -1,7 +1,7 @@
 class_name Item_Info extends Scale_Control
 
-export( NodePath ) onready var item_name = get_node( item_name ) as Label
-export( NodePath ) onready var line_container = get_node( line_container ) as Control
+@export( NodePath ) onready var item_name = get_node( item_name ) as Label
+@export( NodePath ) onready var line_container = get_node( line_container ) as Control
 
 # Display the hovered item info.
 # Each components on the item also adds their info.
@@ -19,18 +19,18 @@ func display( slot_node : Inventory_Slot_Node ):
 	for c in slot.item.components.values():
 		c.set_info( self )
 	
-	rect_size = Vector2.ZERO
+	size = Vector2.ZERO
 	show()
 	
-	rect_global_position = ( slot_node.rect_size * SettingsManager.scale ) + slot_node.rect_global_position
+	global_position = ( slot_node.size * SettingsManager.scale ) + slot_node.global_position
 	var window_size = get_viewport().get_visible_rect().size
-	var scaled = ( rect_size * scale )
+	var scaled = ( size * scale )
 	
-	if rect_global_position.y + scaled.y > window_size.y:
-		rect_global_position.y = window_size.y - scaled.y
+	if global_position.y + scaled.y > window_size.y:
+		global_position.y = window_size.y - scaled.y
 	
-	if rect_global_position.x + scaled.x > window_size.x:
-		rect_global_position.x = slot_node.rect_global_position.x - scaled.x
+	if global_position.x + scaled.x > window_size.x:
+		global_position.x = slot_node.global_position.x - scaled.x
 
 # Add a line node in the list.
 func add_line( line ):
@@ -38,7 +38,7 @@ func add_line( line ):
 
 # Add a spliter line in the list.
 func add_splitter():
-	add_line( ResourceManager.tscn.splitter.instance() )
+	add_line( ResourceManager.tscn.splitter.instantiate() )
 
 
 

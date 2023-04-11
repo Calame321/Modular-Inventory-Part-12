@@ -5,7 +5,7 @@ var cooldowns = []
 
 # Connect to cooldown_started signals.
 func _ready():
-	SignalManager.connect( "cooldown_started", self, "_on_cooldown_started" )
+	SignalManager.connect("cooldown_started", Callable(self, "_on_cooldown_started"))
 
 # Count down all active cooldown and turn them off when done.
 func _process( delta ):

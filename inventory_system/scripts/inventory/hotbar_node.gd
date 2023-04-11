@@ -1,8 +1,8 @@
 class_name Hotbar_Node extends Scale_Control
 
-export ( NodePath ) onready var slot_container = get_node( slot_container ) as Control
+@export ( NodePath ) onready var slot_container = get_node( slot_container ) as Control
 
-export ( Resource ) var player_data
+@export ( Resource ) var player_data
 
 var slots : Array = []
 

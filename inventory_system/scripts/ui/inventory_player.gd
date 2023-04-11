@@ -1,8 +1,8 @@
 extends Window
 
-export( NodePath ) onready var inventory_container = get_node( inventory_container ) as Control
+@export( NodePath ) onready var inventory_container = get_node( inventory_container ) as Control
 
-export( Resource ) var player_data
+@export var player_data # ( Resource )
 
 # Draw the player's inventories from the player's data.
 func _ready():

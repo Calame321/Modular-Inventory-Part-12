@@ -2,10 +2,10 @@ class_name Split_Stack extends Scale_Control
 
 signal stack_splitted
 
-export ( NodePath ) onready var qty_slider = get_node( qty_slider ) as HSlider
-export ( NodePath ) onready var lbl_original = get_node( lbl_original ) as Label
-export ( NodePath ) onready var lbl_new = get_node( lbl_new ) as Label
-export ( NodePath ) onready var popup = get_node( popup ) as Popup
+@export ( NodePath ) onready var qty_slider = get_node( qty_slider ) as HSlider
+@export ( NodePath ) onready var lbl_original = get_node( lbl_original ) as Label
+@export ( NodePath ) onready var lbl_new = get_node( lbl_new ) as Label
+@export ( NodePath ) onready var popup = get_node( popup ) as Popup
 
 var quantity
 var new_quantity

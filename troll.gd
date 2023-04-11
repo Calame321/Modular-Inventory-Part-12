@@ -1,15 +1,15 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-export( NodePath ) onready var interact_zone = get_node( interact_zone ) as Area2D
-export( NodePath ) onready var interact_labels = get_node( interact_labels ) as Control
+@export( NodePath ) onready var interact_zone = get_node( interact_zone ) as Area2D
+@export( NodePath ) onready var interact_labels = get_node( interact_labels ) as Control
 
-export( Resource ) var player_data
+@export var player_data # ( Resource )
 
 var current_interactable
 
 func _ready():
-	SignalManager.connect( "item_dropped", self, "_on_item_dropped" )
-	player_data.connect( "changed", self, "_on_data_changed" )
+	SignalManager.connect("item_dropped", Callable(self, "_on_item_dropped"))
+	player_data.connect("changed", Callable(self, "_on_data_changed"))
 	_on_data_changed()
 
 func _physics_process(_delta):
@@ -19,7 +19,8 @@ func _physics_process(_delta):
 	motion.y /= 2
 	motion = motion.normalized() * player_data.get_stat( Game_Enums.STAT.MOVE_SPEED )
 	#warning-ignore:return_value_discarded
-	move_and_slide(motion)
+	set_velocity(motion)
+	move_and_slide()
 	if player_data:
 		player_data.global_position = global_position
 
@@ -44,7 +45,7 @@ func _on_interactable_zone_area_exited( area ):
 		current_interactable = null
 
 func _on_item_dropped( item ):
-	var floor_item = ResourceManager.tscn.floor_item.instance()
+	var floor_item = ResourceManager.tscn.floor_item.instantiate()
 	floor_item.item = item
 	get_parent().add_child( floor_item )
 	floor_item.position = position

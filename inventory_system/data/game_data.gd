@@ -1,7 +1,7 @@
 class_name Game_Data extends Resource
 
-export( Resource ) var settings_data
-export( Resource ) var player_data
+@export var settings_data # ( Resource )
+@export var player_data # ( Resource )
 
 # Set the data from a Dictionary.
 func set_data( data ):

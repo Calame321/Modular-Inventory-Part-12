@@ -1,8 +1,8 @@
 class_name Window extends Dragable_Control
 
-export( NodePath ) onready var lbl_title = get_node( lbl_title ) as Label
+@export( NodePath ) onready var lbl_title = get_node( lbl_title ) as Label
 
-var title setget set_title
+var title : set = set_title
 
 func set_title( value ):
 	title = value
