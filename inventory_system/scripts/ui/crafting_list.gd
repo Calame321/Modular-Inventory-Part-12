@@ -1,4 +1,4 @@
-extends Window
+extends UiWindow
 
 func _ready():
 	SignalManager.connect("crafting_opened", Callable(self, "_on_crafting_opened"))

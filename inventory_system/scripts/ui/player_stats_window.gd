@@ -1,4 +1,4 @@
-extends Window
+extends UiWindow
 
 @export var player_data : Player_Data
 

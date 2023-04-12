@@ -57,22 +57,19 @@ var stat_info = {}
 var recipes_info = {}
 
 func _ready():
+	var json = JSON.new()
+	
 	# Load the stats
-	var file = File.new()
-	file.open( STAT_PATH, File.READ )
-	var test_json_conv = JSON.new()
-	test_json_conv.parse( file.get_as_text() )
-	var data = test_json_conv.get_data()
+	var file = FileAccess.open( STAT_PATH, FileAccess.READ )
+	json.parse( file.get_as_text() )
+	var data = json.get_data()
 	for stat in data:
 		stat_info[ Game_Enums.STAT[ stat ] ] = data[ stat ]
-	file.close()
 	
 	# Load the recipes
-	file.open( RECIPE_PATH, File.READ )
-	var test_json_conv = JSON.new()
-	test_json_conv.parse( file.get_as_text() )
-	recipes_info = test_json_conv.get_data()
-	file.close()
+	file = FileAccess.open( RECIPE_PATH, FileAccess.READ )
+	json.parse( file.get_as_text() )
+	recipes_info = json.get_data()
 
 # Get a prefab scene instance from it's id.
 func get_instance( id ):

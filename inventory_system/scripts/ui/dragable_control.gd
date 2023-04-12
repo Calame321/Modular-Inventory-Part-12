@@ -14,8 +14,7 @@ func _input( event ):
 		set_pos( event.position - offset )
 
 # Change the scale, but keep the control in the screen.
-func set_scale( value ):
-	super.set_scale( value )
+func set_ui_scale( value ):
 	await get_tree().idle_frame
 	set_pos( position )
 
@@ -32,7 +31,7 @@ func _gui_input( event : InputEvent ):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		offset = event.global_position - position
 		dragging = event.pressed
-		raise()
+		move_to_front()
 
 # If the size change, make sure it's still in the screen.
 func _on_size_changed():

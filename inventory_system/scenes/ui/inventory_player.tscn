@@ -1,27 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2ko3c2q6vk6d"]
+[gd_scene load_steps=4 format=3 uid="uid://8ets62ydl7e"]
 
 [ext_resource type="Script" path="res://inventory_system/scripts/ui/inventory_player.gd" id="1"]
 [ext_resource type="Resource" path="res://inventory_system/data/resources/player_data.tres" id="2"]
-[ext_resource type="PackedScene" uid="uid://q1m2b6ddm1x6" path="res://inventory_system/scenes/ui/window.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://c1xw2ywgml5ml" path="res://inventory_system/scenes/ui/ui_window.tscn" id="6"]
 
 [node name="inventory_player" instance=ExtResource("6")]
-anchors_preset = 8
 script = ExtResource("1")
-inventory_container = NodePath("inventory_container")
 player_data = ExtResource("2")
 
-[node name="title" parent="." index="0"]
-layout_mode = 2
-
 [node name="close" parent="title" index="0"]
-layout_mode = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 9.0
+offset_bottom = 9.0
 
-[node name="Label" parent="title" index="1"]
-layout_mode = 0
+[node name="lbl_title" parent="title" index="1"]
 text = "Player's Inventory"
-
-[node name="title" parent="title/Label" index="0"]
-layout_mode = 0
 
 [node name="inventory_container" type="VBoxContainer" parent="." index="1"]
 unique_name_in_owner = true

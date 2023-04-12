@@ -113,19 +113,13 @@ func get_inventory_by_name( inv_name ):
 		return player_data.inventory_right
 
 # Split the item stack in the slot.
-func split( slot_node ):
-	if slot_node.slot.item.quantity == 2:
-		_on_stack_splitted( slot_node, 1 )
-	else:
-		split_stack.display( slot_node )
-
-## Signal Connexions ##
-func _on_stack_splitted( slot_node, new_quantity ):
-	slot_node.slot.item.quantity -= new_quantity
+func split( slot_node, event_position ):
+	var quantity = ceil( slot_node.slot.item.quantity / 2 )
+	slot_node.slot.item.quantity -= quantity
 	var new_item = ItemManager.get_item( slot_node.slot.item.id )
-	new_item.quantity = new_quantity
+	new_item.quantity = quantity
 	%item_in_hand.item = new_item
-	set_hand_position( slot_node.global_position )
+	set_hand_position( event_position )
 
 # When an item is clicked in the void, drop it.
 func _on_void_gui_input( event ):
@@ -150,7 +144,7 @@ func _on_mouse_exited_slot():
 func _on_gui_input_slot( event : InputEvent, slot_node : Inventory_Slot_Node ):
 	var slot = slot_node.slot
 	if slot.item and slot.item.quantity > 1 and %item_in_hand.item == null and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT and Input.is_key_pressed( KEY_SHIFT ):
-		split( slot_node )
+		split( slot_node, event.global_position )
 	elif event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			var had_empty_hand = %item_in_hand.item == null

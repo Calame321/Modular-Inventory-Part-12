@@ -34,30 +34,24 @@ func _init():
 
 # Load the content of the data files.
 func _ready():
-	var file = File.new()
+	var json = JSON.new()
 	
 	# items
-	file.open( ITEM_PATH, File.READ )
-	var test_json_conv = JSON.new()
-	test_json_conv.parse( file.get_as_text() )
-	items = test_json_conv.get_data()
-	file.close()
+	var file = FileAccess.open( ITEM_PATH, FileAccess.READ )
+	json.parse( file.get_as_text() )
+	items = json.get_data()
 	
 	# names
-	file.open( RARE_NAMES_PATH, File.READ )
-	var test_json_conv = JSON.new()
-	test_json_conv.parse(file.get_as_text())
-	rare_names = test_json_conv.get_data()
-	file.close()
+	file = FileAccess.open( RARE_NAMES_PATH, FileAccess.READ )
+	json.parse( file.get_as_text() )
+	rare_names = json.get_data()
 	
 	# affixes group
-	file.open( AFFIXES_PATH, File.READ )
-	var test_json_conv = JSON.new()
-	test_json_conv.parse( file.get_as_text() )
-	var data = test_json_conv.get_data()
+	file = FileAccess.open( AFFIXES_PATH, FileAccess.READ )
+	json.parse( file.get_as_text() )
+	var data = json.get_data()
 	for id in data:
 		affix_groups[ id ] = Affix_Group.new( id, data[ id ] )
-	file.close()
 
 # Build the item of the given id.
 func get_item( id : String ) -> Item:

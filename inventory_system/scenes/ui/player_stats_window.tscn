@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5isjsqccfmex"]
+[gd_scene load_steps=6 format=3 uid="uid://blvn2a1umjmgr"]
 
-[ext_resource type="PackedScene" uid="uid://q1m2b6ddm1x6" path="res://inventory_system/scenes/ui/window.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://c1xw2ywgml5ml" path="res://inventory_system/scenes/ui/ui_window.tscn" id="1"]
 [ext_resource type="FontFile" uid="uid://c2wbhmvt6pm3k" path="res://inventory_system/resources/font/Arcadepix Plus.ttf" id="2"]
 [ext_resource type="Script" path="res://inventory_system/scripts/ui/player_stats_window.gd" id="3"]
 [ext_resource type="Resource" path="res://inventory_system/data/resources/player_data.tres" id="4"]
@@ -21,29 +21,21 @@ cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="player_stats" instance=ExtResource("1")]
-anchors_preset = 8
 offset_right = 24.0
 offset_bottom = 16.0
 script = ExtResource("3")
-lbl_str = NodePath("VBoxContainer/str/lbl_str")
-lbl_dex = NodePath("VBoxContainer/dex/lbl_dex")
-lbl_int = NodePath("VBoxContainer/int/lbl_int")
-lbl_vit = NodePath("VBoxContainer/vit/lbl_vit")
-lbl_msp = NodePath("VBoxContainer/msp/lbl_move_speed")
 player_data = ExtResource("4")
 
-[node name="title" parent="." index="0"]
-layout_mode = 2
-
 [node name="close" parent="title" index="0"]
-layout_mode = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 9.0
+offset_bottom = 9.0
 
-[node name="Label" parent="title" index="1"]
-layout_mode = 0
+[node name="lbl_title" parent="title" index="1"]
 text = "Stats"
-
-[node name="title" parent="title/Label" index="0"]
-layout_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
 layout_mode = 2

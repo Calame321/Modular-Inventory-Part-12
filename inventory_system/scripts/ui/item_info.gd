@@ -8,7 +8,7 @@ func display( slot_node : Inventory_Slot_Node ):
 		c.queue_free()
 	
 	var slot = slot_node.slot
-	%item_name.text = slot.item.get_name()
+	%item_name.text = slot.item.get_item_name()
 	var rarity_name = Game_Enums.RARITY.keys()[ slot.item.rarity ].capitalize()
 	var line_type = Item_Info_Line.new( rarity_name + "   " + ItemManager.get_type_name( slot.item ), slot.item.rarity )
 	%line_container.add_child( line_type )

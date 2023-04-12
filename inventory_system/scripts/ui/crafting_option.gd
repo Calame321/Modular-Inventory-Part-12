@@ -29,7 +29,7 @@ func set_info( recipe_id, price_items, produce_items ):
 # and the 'player' inventories has enough space for the produced items.
 func set_craft_button():
 	var can_craft = InventoryManager.has_items( price, "crafting" ) and InventoryManager.has_space_for_items( produce, "player" )
-	craft_btn.disabled = not can_craft
+	%craft.disabled = not can_craft
 
 # When crafting, remove the price tiems, adds the produces.
 func _on_craft_pressed():

@@ -10,32 +10,28 @@ func _ready():
 	load_game()
 
 func has_save_file():
-	var file = File.new()
-	return file.file_exists( SAVE_FOLDER + SAVE_FILE )
+	return FileAccess.file_exists( SAVE_FOLDER + SAVE_FILE )
 
 func load_game():
-	var file = File.new()
 	var save_path = SAVE_FOLDER + SAVE_FILE
-	if file.file_exists( save_path ):
-		file.open( save_path, File.READ )
+	if FileAccess.file_exists( save_path ):
+		var file = FileAccess.open( save_path, FileAccess.READ )
 		var data = file.get_var( true )
-		file.close()
 		
 		if data != null:
 			game_data.set_data( data )
 
 func save_game():
 	SignalManager.emit_signal( "saving_game" )
-	var dir = DirAccess.new()
+	var dir = DirAccess.open( SAVE_FOLDER )
 	
-	if not dir.dir_exists( SAVE_FOLDER ):
+	if not dir:
 		dir.make_dir_recursive( SAVE_FOLDER )
+		dir = DirAccess.open( SAVE_FOLDER )
 	
-	var file = File.new()
 	var save_path = SAVE_FOLDER + SAVE_FILE
-	file.open( save_path, File.WRITE )
+	var file = FileAccess.open( save_path, FileAccess.WRITE )
 	file.store_var( game_data.get_data(), true )
-	file.close()
 
 
 

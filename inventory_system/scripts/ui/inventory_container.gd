@@ -1,4 +1,4 @@
-extends Window
+extends UiWindow
 
 var current_inventory
 

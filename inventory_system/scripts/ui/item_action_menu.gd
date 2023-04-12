@@ -12,11 +12,11 @@ func display( slot_node ):
 	
 	# If slot allow droping.
 	if slot_node.slot.can_drop:
-		add_action( "Drop", funcref( slot_node.slot, "drop_item" ) )
+		add_action( "Drop", slot_node.slot.drop_item )
 	
 	# If it's possible to split.
 	if slot_node.slot.can_split and slot_node.slot.item.quantity > 1:
-		add_action( "Split", funcref( InventoryManager, "split" ), [ slot_node ] )
+		add_action( "Split", InventoryManager.split.bind( slot_node ) )
 	
 	# Get the actions of the components.
 	for c in slot_node.slot.item.components:
@@ -28,7 +28,7 @@ func display( slot_node ):
 	
 	# Able to sell items if the shop is opened.
 	if InventoryManager.is_shop_open:
-		add_action( "Sell", funcref( slot_node.slot, "sell_item" ) )
+		add_action( "Sell", slot_node.slot.sell_item )
 	
 	# If there is actions available.
 	if actions.size() > 0:

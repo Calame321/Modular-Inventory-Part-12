@@ -1,4 +1,4 @@
-extends Window
+extends UiWindow
 
 @export var settings_data : Settings_Data
 

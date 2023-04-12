@@ -6,7 +6,7 @@ func _input( event ):
 
 func _on_settings_pressed():
 	%settings.visible = ! %settings.visible
-	%settings.raise()
+	%settings.move_to_front()
 
 func _on_quit_pressed():
 	get_tree().quit()

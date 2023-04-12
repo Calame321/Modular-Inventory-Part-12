@@ -1,22 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://q1m2b6ddm1x6"]
+[gd_scene load_steps=11 format=3 uid="uid://c1xw2ywgml5ml"]
 
-[ext_resource type="Script" path="res://inventory_system/scripts/ui/window.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://du2shr5m2l0yy" path="res://inventory_system/resources/sprites/title.png" id="2"]
-[ext_resource type="FontFile" uid="uid://c2wbhmvt6pm3k" path="res://inventory_system/resources/font/Arcadepix Plus.ttf" id="3"]
-[ext_resource type="Texture2D" uid="uid://dao6265r6iclf" path="res://inventory_system/resources/sprites/x_hover.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://c8f03elexcrvx" path="res://inventory_system/resources/sprites/main panel.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://cmp252k4hcmrk" path="res://inventory_system/resources/sprites/x_normal.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://h8jpsu20u2je" path="res://inventory_system/resources/sprites/x_pressed.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://cktpwm1tfp256" path="res://inventory_system/resources/sprites/x_disabled.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://c8f03elexcrvx" path="res://inventory_system/resources/sprites/main panel.png" id="1_tqr4r"]
+[ext_resource type="Script" path="res://inventory_system/scripts/ui/ui_window.gd" id="2_giers"]
+[ext_resource type="Texture2D" uid="uid://cmp252k4hcmrk" path="res://inventory_system/resources/sprites/x_normal.png" id="3_yfoq4"]
+[ext_resource type="Texture2D" uid="uid://h8jpsu20u2je" path="res://inventory_system/resources/sprites/x_pressed.png" id="4_ch5h1"]
+[ext_resource type="Texture2D" uid="uid://dao6265r6iclf" path="res://inventory_system/resources/sprites/x_hover.png" id="5_4df2a"]
+[ext_resource type="Texture2D" uid="uid://cktpwm1tfp256" path="res://inventory_system/resources/sprites/x_disabled.png" id="6_2j7nw"]
+[ext_resource type="FontFile" uid="uid://c2wbhmvt6pm3k" path="res://inventory_system/resources/font/Arcadepix Plus.ttf" id="7_71xip"]
+[ext_resource type="Texture2D" uid="uid://du2shr5m2l0yy" path="res://inventory_system/resources/sprites/title.png" id="8_3vg2t"]
 
 [sub_resource type="StyleBoxTexture" id="2"]
-texture = ExtResource("5")
+texture = ExtResource("1_tqr4r")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(0, 0, 32, 32)
 
 [sub_resource type="FontFile" id="1"]
-fallbacks = Array[Font]([ExtResource("3")])
+fallbacks = Array[Font]([ExtResource("7_71xip")])
 face_index = null
 embolden = null
 transform = null
@@ -39,8 +39,7 @@ offset_right = 72.0
 offset_bottom = 31.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("2")
-script = ExtResource("1")
-lbl_title = NodePath("title/title")
+script = ExtResource("2_giers")
 
 [node name="title" type="Control" parent="."]
 layout_mode = 2
@@ -54,12 +53,12 @@ offset_left = -1.0
 offset_top = -8.0
 offset_right = 8.0
 offset_bottom = 1.0
-texture_normal = ExtResource("6")
-texture_pressed = ExtResource("7")
-texture_hover = ExtResource("4")
-texture_disabled = ExtResource("8")
+texture_normal = ExtResource("3_yfoq4")
+texture_pressed = ExtResource("4_ch5h1")
+texture_hover = ExtResource("5_4df2a")
+texture_disabled = ExtResource("6_2j7nw")
 
-[node name="title" type="Label" parent="title"]
+[node name="lbl_title" type="Label" parent="title"]
 unique_name_in_owner = true
 layout_mode = 0
 anchor_right = 1.0
@@ -71,7 +70,7 @@ theme_override_colors/font_color = Color(0.301961, 0.34902, 0.4, 1)
 theme_override_fonts/font = SubResource("1")
 text = "Window's Name"
 
-[node name="title" type="NinePatchRect" parent="title/title"]
+[node name="title" type="NinePatchRect" parent="title/lbl_title"]
 show_behind_parent = true
 layout_mode = 0
 anchor_right = 1.0
@@ -79,7 +78,7 @@ anchor_bottom = 1.0
 offset_top = -5.0
 offset_bottom = 2.0
 mouse_filter = 1
-texture = ExtResource("2")
+texture = ExtResource("8_3vg2t")
 patch_margin_left = 8
 patch_margin_top = 6
 patch_margin_right = 8

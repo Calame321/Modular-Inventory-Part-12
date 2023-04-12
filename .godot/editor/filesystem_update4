@@ -1,4 +1,12 @@
-res://troll.tscn
+res://inventory_system/scenes/ui/settings.tscn
 res://tileset.tres
+res://inventory_system/scenes/ui/player_stats_window.tscn
+res://inventory_system/scenes/ui/crafting_list.tscn
+res://inventory_system/scenes/ui/inventory_container.tscn
+res://inventory_system/scenes/ui/inventory_player.tscn
+res://inventory_system/scripts/ui/crafting_list.gd
 res://inventory_system/scripts/ui/player_stats_window.gd
+res://inventory_system/scripts/ui/inventory_container.gd
+res://inventory_system/scripts/ui/inventory_player.gd
+res://inventory_system/scripts/ui/settings.gd
 res://scenes/main.tscn

@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnms7pxu8y620"]
+[gd_scene load_steps=7 format=3 uid="uid://b8wmxtfw71wp"]
 
 [ext_resource type="Texture2D" uid="uid://ddwobnon6ksr7" path="res://inventory_system/resources/sprites/inner_panel.png" id="1"]
-[ext_resource type="PackedScene" uid="uid://q1m2b6ddm1x6" path="res://inventory_system/scenes/ui/window.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://c1xw2ywgml5ml" path="res://inventory_system/scenes/ui/ui_window.tscn" id="2"]
 [ext_resource type="Resource" path="res://inventory_system/data/resources/settings_data.tres" id="3"]
 [ext_resource type="FontFile" uid="uid://c2wbhmvt6pm3k" path="res://inventory_system/resources/font/Arcadepix Plus.ttf" id="8"]
 [ext_resource type="Script" path="res://inventory_system/scripts/ui/settings.gd" id="9"]
@@ -22,26 +22,11 @@ cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="settings" instance=ExtResource("2")]
-anchors_preset = 8
 script = ExtResource("9")
-scale_slider = NodePath("setting list/scale/scale_slider")
-fullscreen_check = NodePath("setting list/fullscreen/fullscreen_check")
-lbl_min = NodePath("setting list/scale/min")
-lbl_max = NodePath("setting list/scale/max")
 settings_data = ExtResource("3")
 
-[node name="title" parent="." index="0"]
-layout_mode = 2
-
-[node name="close" parent="title" index="0"]
-layout_mode = 0
-
-[node name="Label" parent="title" index="1"]
-layout_mode = 0
+[node name="lbl_title" parent="title" index="1"]
 text = "Settings"
-
-[node name="title" parent="title/Label" index="0"]
-layout_mode = 0
 
 [node name="setting list" type="VBoxContainer" parent="." index="1"]
 layout_mode = 2
