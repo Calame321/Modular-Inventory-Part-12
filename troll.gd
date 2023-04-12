@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var player_data # ( Resource )
+@export var player_data : Player_Data
 
 var current_interactable
 

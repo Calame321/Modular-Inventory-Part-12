@@ -1,7 +1,7 @@
 extends Node
 
 ## Variables ##
-@export var player_data # ( Resource )
+@export var player_data : Player_Data
 
 var inventory_groups : Dictionary = {}
 var item_offset = Vector2.ZERO

@@ -1,2 +1,4 @@
-res://scenes/main.tscn
+res://troll.tscn
 res://tileset.tres
+res://inventory_system/scripts/ui/player_stats_window.gd
+res://scenes/main.tscn

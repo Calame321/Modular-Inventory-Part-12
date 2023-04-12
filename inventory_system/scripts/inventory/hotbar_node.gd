@@ -1,6 +1,6 @@
 class_name Hotbar_Node extends Control
 
-@export ( Resource ) var player_data
+@export var player_data : Player_Data
 
 var slots : Array = []
 

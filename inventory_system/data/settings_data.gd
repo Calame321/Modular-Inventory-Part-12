@@ -1,7 +1,7 @@
 class_name Settings_Data extends Resource
 
-@export var fullscreen = true # ( bool )
-@export var scale = 1 # ( float )
+@export var fullscreen : bool = true
+@export var scale : float = 1
 
 # Set the data from a Dictionary.
 func set_data( data ):

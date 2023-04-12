@@ -1,6 +1,6 @@
 extends Window
 
-@export var player_data # ( Resource )
+@export var player_data : Player_Data
 
 # Draw the player's inventories from the player's data.
 func _ready():

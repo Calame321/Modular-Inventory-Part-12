@@ -1,6 +1,6 @@
 extends Window
 
-@export var player_data # ( Resource )
+@export var player_data : Player_Data
 
 func _ready():
 	player_data.equipment.connect("content_changed", Callable(self, "_on_content_changed"))

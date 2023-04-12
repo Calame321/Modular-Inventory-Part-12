@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var item_id # ( String )
+@export var item_id : String
 
 var item : Item
 var action = "pickup"

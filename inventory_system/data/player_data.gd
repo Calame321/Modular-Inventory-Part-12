@@ -1,7 +1,7 @@
 class_name Player_Data extends Resource
 
-@export var global_position = Vector2( 368, 347 ) # ( Vector2 )
-@export var inventories # ( Dictionary )
+@export var global_position : Vector2 = Vector2( 368, 347 )
+@export var inventories : Dictionary
 
 var base_stats = {
 	Game_Enums.STAT.STRENGTH: 5,

@@ -1,6 +1,6 @@
 class_name Equipment_Slot extends Inventory_Slot
 
-@export ( Game_Enums.EQUIPMENT_TYPE ) var type
+@export var type : Game_Enums.EQUIPMENT_TYPE
 
 # Set the type of equipment accepted.
 func _init( i, inv_name, t ):

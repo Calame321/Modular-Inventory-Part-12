@@ -9,8 +9,8 @@ signal content_changed()
 signal size_changed()
 
 ## Variables ##
-@export var name # ( String )
-@export var size = 0: set = set_inventory_size
+@export var name : String
+@export var size : int = 0 : set = set_inventory_size
 
 var groups : Array = []: set = set_groups
 var slots : Array = []

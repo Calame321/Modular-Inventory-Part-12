@@ -1,6 +1,6 @@
 extends Window
 
-@export var settings_data # ( Resource )
+@export var settings_data : Settings_Data
 
 func _ready():
 	%min.text = "Min: %s" % %scale_slider.min_value

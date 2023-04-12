@@ -1,6 +1,6 @@
 class_name Dragable_Control extends Control
 
-@export ( int ) var safe_zone = 30
+@export var safe_zone : int = 30
 
 var dragging : bool = false
 var offset : Vector2

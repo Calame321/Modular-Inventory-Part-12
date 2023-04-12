@@ -16,8 +16,6 @@ height = 76.0
 
 [node name="Troll" type="CharacterBody2D"]
 script = ExtResource("1")
-interact_zone = NodePath("interactable_zone")
-interact_labels = NodePath("interactable labels")
 player_data = ExtResource("6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

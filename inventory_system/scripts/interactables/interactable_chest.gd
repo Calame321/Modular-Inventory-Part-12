@@ -1,10 +1,10 @@
 class_name Chest extends Area2D
 
 # Item that will be picked randomly.
-@export var loot_table # ( Array, String )
+@export var loot_table : Array[ String ]
 
 # The Inventory data.
-@export var inventory # Inventory # ( Resource )
+@export var inventory : Inventory
 
 # The action shown in the interactable text.
 var action = "open"
