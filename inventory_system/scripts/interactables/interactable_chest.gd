@@ -23,8 +23,8 @@ func set_items():
 
 # Sent the signal to show the content of the chest.
 func interact():
-	SignalManager.emit_signal( "inventory_opened", inventory )
+	SignalManager.inventory_opened.emit( inventory )
 
 # Close the chest when too far away.
 func out_of_range():
-	SignalManager.emit_signal( "inventory_closed", inventory )
+	SignalManager.inventory_closed.emit( inventory )

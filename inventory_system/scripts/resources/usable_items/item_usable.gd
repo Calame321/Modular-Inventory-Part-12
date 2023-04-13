@@ -18,7 +18,7 @@ var item : Item
 func _init( data, parent_item ):
 	item = parent_item
 	set_data( data )
-	SignalManager.connect("inventory_group_content_changed", Callable(self, "_on_inventory_group_content_changed"))
+	SignalManager.inventory_group_content_changed.connect( _on_inventory_group_content_changed )
 
 # Set the base data.
 func set_data( data ):
@@ -39,7 +39,7 @@ func use():
 		
 		is_in_cooldown = true
 		cooldown_remaining = cooldown
-		SignalManager.emit_signal( "cooldown_started", self )
+		SignalManager.cooldown_started.emit( self )
 
 # Execute the effect of the usable item.
 # Must be implemented on the inherited script.
@@ -63,13 +63,13 @@ func set_info( item_info ):
 func get_action():
 	return {
 		name = "Use",
-		function = funcref( self, "use" )
+		function = use
 	}
 
 # When the content of the player's inventories change, emit a signal to notifiy if it's usable.
 func _on_inventory_group_content_changed( groups ):
 	if groups.has( "player" ):
-		emit_signal( "can_use_changed", is_usable() )
+		can_use_changed.emit( is_usable() )
 
 
 

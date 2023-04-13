@@ -13,8 +13,8 @@ func _ready():
 	add_inventory( player_data.inventory_left )
 	add_inventory( player_data.inventory_right )
 	
-	%item_void.connect("gui_input", Callable(self, "_on_void_gui_input"))
-	SignalManager.connect("upgrade_item", Callable(self, "_on_upgrade_item"))
+	%item_void.gui_input.connect( _on_void_gui_input )
+	SignalManager.upgrade_item.connect( _on_upgrade_item )
 
 func _input( event : InputEvent ):
 	if event is InputEventMouseMotion and %item_in_hand.item:
@@ -53,7 +53,7 @@ func add_items( items, group_id ):
 
 # Add an inventory to a group, or create a new group.
 func add_inventory( inv ) -> void:
-	inv.connect("content_changed", Callable(self, "_on_inventory_content_changed"))
+	inv.content_changed.connect( _on_inventory_content_changed )
 	
 	for g in inv.groups:
 		if not inventory_groups.has( g ):
@@ -124,7 +124,7 @@ func split( slot_node, event_position ):
 # When an item is clicked in the void, drop it.
 func _on_void_gui_input( event ):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		SignalManager.emit_signal( "item_dropped", %item_in_hand.item )
+		SignalManager.item_dropped.emit( %item_in_hand.item )
 		%item_in_hand.item = null
 		set_item_void_filter()
 
@@ -162,14 +162,14 @@ func _on_gui_input_slot( event : InputEvent, slot_node : Inventory_Slot_Node ):
 			slot.item.components.usable.use()
 	
 	if slot.item:
-		slot_node.emit_signal( "mouse_entered" )
+		slot_node.mouse_entered.emit()
 	else:
-		slot_node.emit_signal( "mouse_exited" )
+		slot_node.mouse_exited.emit()
 
 # Emit a signal when the content of an inventory has changed.
 # Ex: Enable the craft button if the crafting inventories has the required items.
 func _on_inventory_content_changed( groups ):
-	SignalManager.emit_signal( "inventory_group_content_changed", groups )
+	SignalManager.inventory_group_content_changed.emit( groups )
 
 # Upgrade an item on the player.
 # Normal -> Magic -> Rare.
@@ -178,7 +178,7 @@ func _on_upgrade_item():
 	valid_items.shuffle()
 	var item = valid_items[ 0 ]
 	ItemManager.generate_rarity( item, item.level, item.rarity + 1 )
-	item.slot.emit_signal( "item_changed" )
+	item.slot.item_changed.emit()
 
 
 

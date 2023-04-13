@@ -4,7 +4,7 @@ var price: Array
 var produce: Array
 
 func _ready():
-	SignalManager.connect("inventory_group_content_changed", Callable(self, "_on_inventory_group_changed"))
+	SignalManager.inventory_group_content_changed.connect( _on_inventory_group_changed )
 
 # Set the price and produce list.
 func set_info( recipe_id, price_items, produce_items ):

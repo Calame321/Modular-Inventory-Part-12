@@ -20,10 +20,10 @@ var slot # Inventory_Slot
 # Set the new quantity and deal with signals.
 func set_quantity( value ):
 	quantity = value
-	emit_signal( "quantity_changed", quantity )
+	quantity_changed.emit( quantity )
 	
 	if quantity <= 0:
-		emit_signal( "depleted" )
+		depleted.emit()
 
 # Add the given quantity to the item.
 # Return the reminder if the stack is full.

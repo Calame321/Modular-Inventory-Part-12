@@ -21,19 +21,19 @@ func set_item( new_item ):
 	unset_old_item()
 	item = new_item
 	set_new_item()
-	emit_signal( "item_changed" )
+	item_changed.emit()
 
 # Remove the slot from the node and disconnect signals.
 func unset_old_item():
 	if item:
 		item.slot = null
-		item.disconnect("depleted", Callable(self, "_on_item_depleted"))
+		item.depleted.disconnect( _on_item_depleted )
 
 # Add the slot to the node and connect signals.
 func set_new_item():
 	if item:
 		item.slot = self
-		item.connect("depleted", Callable(self, "_on_item_depleted"))
+		item.depleted.connect( _on_item_depleted )
 
 # Check if the item can go in the slot.
 func accept_item( new_item ) -> bool:
@@ -77,7 +77,7 @@ func has_both_item( new_item ):
 	if can_stack( new_item ):
 		var remainder = item.add_item_quantity( new_item.quantity )
 		new_item.quantity = remainder
-		emit_signal( "item_changed" )
+		item_changed.emit()
 	# swap the item in hand with the one in the slot
 	else:
 		var temp_item = item
@@ -101,7 +101,7 @@ func add_group( group_id ):
 func drop_item():
 	var old_item = item
 	set_item( null )
-	SignalManager.emit_signal( "item_dropped", old_item )
+	SignalManager.item_dropped.emit( old_item )
 
 # Remove the item, but add gold coins.
 func sell_item():

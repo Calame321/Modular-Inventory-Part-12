@@ -5,8 +5,8 @@ extends CharacterBody2D
 var current_interactable
 
 func _ready():
-	SignalManager.connect("item_dropped", Callable(self, "_on_item_dropped"))
-	player_data.connect("changed", Callable(self, "_on_data_changed"))
+	SignalManager.item_dropped.connect( _on_item_dropped )
+	player_data.changed.connect( _on_data_changed )
 	_on_data_changed()
 
 func _physics_process(_delta):

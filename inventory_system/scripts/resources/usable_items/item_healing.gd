@@ -4,7 +4,7 @@ var healing_amount
 
 func _init( data, parent_item ):
 	super( data, parent_item )
-	SignalManager.connect("player_life_changed", Callable(self, "_on_player_life_changed"))
+	SignalManager.player_life_changed.connect( _on_player_life_changed )
 	on_use_text = "Heal %s life points."
 	condition = "Need healing."
 	can_always_use = true
@@ -24,7 +24,7 @@ func _on_player_life_changed( life, max_life ):
 
 # Apply the healing.
 func execute():
-	SignalManager.emit_signal( "heal_player", healing_amount )
+	SignalManager.heal_player.emit( healing_amount )
 	print( "Healing the player for %s life point!" % healing_amount )
 
 

@@ -1,8 +1,8 @@
 extends UiWindow
 
 func _ready():
-	SignalManager.connect("crafting_opened", Callable(self, "_on_crafting_opened"))
-	SignalManager.connect("crafting_out_of_range", Callable(self, "_on_crafting_out_of_range"))
+	SignalManager.crafting_opened.connect( _on_crafting_opened )
+	SignalManager.crafting_out_of_range.connect( _on_crafting_out_of_range )
 
 # Display the list of recipes.
 func display( recipes ):

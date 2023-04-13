@@ -24,14 +24,14 @@ func set_inventory_size( value ):
 	
 	if slots.size() > value:
 		for s in range( size - 1, -1, -1 ):
-			slots.remove( s )
+			slots.remove_at( s )
 	else:
 		for s in range( slots.size(), size ):
 			var slot = get_new_slot( s )
 			slot.groups = groups
 			slots.append( slot )
-			slot.connect("item_changed", Callable(self, "_on_item_changed"))
-	emit_signal( "size_changed" )
+			slot.item_changed.connect( _on_item_changed )
+	size_changed.emit()
 
 # Set it's own and the slots' groups.
 func set_groups( value ):
@@ -73,7 +73,7 @@ func try_place_stack_items( items : Array ):
 				if s.item.id == items[ i ].id:
 					if items[ i ].quantity <= free_space:
 						free_space -= items[ i ].quantity
-						items.remove( i )
+						items.remove_at( i )
 					else:
 						items[ i ].quantity -= free_space
 						break
@@ -86,7 +86,7 @@ func accept_items( items : Array ):
 	for s in slots:
 		for i in range( items.size() - 1, -1, -1 ):
 			if s.accept_item( items[ i ] ):
-				items.remove( i )
+				items.remove_at( i )
 				break
 	return items
 
@@ -125,7 +125,7 @@ func remove_item_quantity( id, quantity ):
 # Check for upgradable items and emit the "content_changed" signal.
 func content_has_changed():
 	set_upgradable_items()
-	emit_signal( "content_changed", groups )
+	content_changed.emit( groups )
 
 # Pack the inventory data in a Dictionary.
 func get_data() -> Dictionary:

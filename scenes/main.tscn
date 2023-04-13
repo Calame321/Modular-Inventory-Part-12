@@ -26,12 +26,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("8")
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-settings = NodePath("windows/settings")
-player_inventory = NodePath("windows/inventory_player")
 
 [node name="windows" type="Control" parent="ui/ui_container"]
 anchors_preset = 0

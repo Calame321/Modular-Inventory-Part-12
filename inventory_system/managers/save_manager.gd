@@ -22,7 +22,7 @@ func load_game():
 			game_data.set_data( data )
 
 func save_game():
-	SignalManager.emit_signal( "saving_game" )
+	SignalManager.saving_game.emit()
 	var dir = DirAccess.open( SAVE_FOLDER )
 	
 	if not dir:

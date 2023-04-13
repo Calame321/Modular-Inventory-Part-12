@@ -3,8 +3,8 @@ extends UiWindow
 var current_inventory
 
 func _ready():
-	SignalManager.connect("inventory_opened", Callable(self, "_on_inventory_opened"))
-	SignalManager.connect("inventory_closed", Callable(self, "_on_inventory_closed"))
+	SignalManager.inventory_opened.connect( _on_inventory_opened )
+	SignalManager.inventory_closed.connect( _on_inventory_closed )
 
 # Remove the inventory node when closed.
 func close():

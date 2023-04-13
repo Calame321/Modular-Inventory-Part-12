@@ -15,12 +15,12 @@ func try_put_item( new_item : Item ) -> bool:
 # Disconnect the depleted signal on the old item.
 func unset_old_item():
 	if item:
-		item.disconnect("depleted", Callable(self, "_on_item_depleted"))
+		item.depleted.disconnect( _on_item_depleted )
 
 # Connect the depleted signal on the new item.
 func set_new_item():
 	if item:
-		item.connect("depleted", Callable(self, "_on_item_depleted"))
+		item.depleted.connect( _on_item_depleted )
 
 # Always return the item we want to place in the slot.
 func put_item( new_item : Item ) -> Item:

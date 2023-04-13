@@ -10,15 +10,15 @@ func set_slot( value ):
 		var item_node = ResourceManager.get_item_node( slot.item )
 		%item_container.add_child( item_node )
 	
-	if not is_connected("mouse_entered", Callable(InventoryManager, "_on_mouse_entered_slot")):
-		connect("mouse_entered", Callable(InventoryManager, "_on_mouse_entered_slot").bind(self))
-		connect("mouse_exited", Callable(InventoryManager, "_on_mouse_exited_slot"))
-		connect("gui_input", Callable(InventoryManager, "_on_gui_input_slot").bind(self))
-		slot.connect("item_changed", Callable(self, "_on_item_changed"))
+	if not mouse_entered.is_connected( InventoryManager._on_mouse_entered_slot ):
+		mouse_entered.connect( InventoryManager._on_mouse_entered_slot.bind( self ) )
+		mouse_exited.connect( InventoryManager._on_mouse_exited_slot )
+		gui_input.connect( InventoryManager._on_gui_input_slot.bind( self ) )
+		slot.item_changed.connect( _on_item_changed )
 
 # When the slot is shown or hidden, cause a mouse exited signal so the item info hides.
 func _on_item_container_visibility_changed():
-	emit_signal( "mouse_exited" )
+	mouse_exited.emit()
 
 # When the item change, update the visual.
 func _on_item_changed():

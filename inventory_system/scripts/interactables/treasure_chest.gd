@@ -11,4 +11,4 @@ func interact():
 	for nb in inventory.slots.size():
 		inventory.add_item( ItemManager.rng_generate_rarity( 100 ) )
 	
-	SignalManager.emit_signal( "inventory_opened", inventory )
+	SignalManager.inventory_opened.emit( inventory )

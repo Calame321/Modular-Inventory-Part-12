@@ -2,7 +2,7 @@ extends Control
 
 func _input( event ):
 	if event.is_action_pressed( "inventory" ):
-		%inventory_player.visible = not player_inventory.visible
+		%inventory_player.visible = not %inventory_player.visible
 
 func _on_settings_pressed():
 	%settings.visible = ! %settings.visible

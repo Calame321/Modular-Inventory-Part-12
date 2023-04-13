@@ -6,7 +6,7 @@ var dragging : bool = false
 var offset : Vector2
 
 func _ready():
-	get_viewport().connect("size_changed", Callable(self, "_on_size_changed"))
+	get_viewport().size_changed.connect( _on_size_changed )
 
 # If the mouse is moving and currently dragging, move the control.
 func _input( event ):
