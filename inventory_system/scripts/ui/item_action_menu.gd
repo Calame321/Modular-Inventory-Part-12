@@ -5,7 +5,7 @@ var actions_args = []
 
 # Display the menu for the selected item.
 func display( slot_node ):
-	%item_menu.global_position = slot_node.global_position
+	%item_menu.position = slot_node.global_position
 	%item_menu.clear()
 	actions = []
 	actions_args = []
@@ -44,7 +44,7 @@ func add_action( action_name, action, args = [] ):
 
 # Activate the clicked action.
 func _on_PopupMenu_id_pressed( id ):
-	actions[ id ].call_funcv( actions_args[ id ] )
+	actions[ id ].callv( actions_args[ id ] )
 
 
 

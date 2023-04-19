@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://inventory_system/scripts/inventory/hotbar_slot_node.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://c2wbhmvt6pm3k" path="res://inventory_system/resources/font/Arcadepix Plus.ttf" id="2"]
-[ext_resource type="PackedScene" path="res://inventory_system/scenes/inventory/inventory_slot_node.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://hsshraxpx3xi" path="res://inventory_system/scenes/inventory/inventory_slot_node.tscn" id="3"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("2")])
@@ -17,12 +17,12 @@ cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="hotbar_slot" instance=ExtResource("3")]
+texture_filter = 1
 script = ExtResource("1")
-lbl_key = NodePath("lbl_key")
-item_texture = NodePath("item_container/item_texture")
 
 [node name="item_container" parent="." index="0"]
-layout_mode = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="item_texture" type="TextureRect" parent="item_container" index="0"]
 layout_mode = 2
@@ -38,3 +38,5 @@ offset_top = -8.0
 offset_bottom = 4.0
 theme_override_fonts/font = SubResource("1")
 text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

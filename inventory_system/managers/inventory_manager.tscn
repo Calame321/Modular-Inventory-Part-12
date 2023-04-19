@@ -1,15 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://2bwbcwt1igkw"]
+[gd_scene load_steps=6 format=3 uid="uid://2bwbcwt1igkw"]
 
 [ext_resource type="PackedScene" uid="uid://dw6ojjjo0xb20" path="res://inventory_system/scenes/ui/item_info.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://ddwobnon6ksr7" path="res://inventory_system/resources/sprites/inner_panel.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://ducqtpe60fduc" path="res://inventory_system/scenes/ui/item_action_menu.tscn" id="4"]
 [ext_resource type="Script" path="res://inventory_system/managers/inventory_manager.gd" id="5"]
 [ext_resource type="Script" path="res://inventory_system/managers/item_in_hand.gd" id="6"]
 [ext_resource type="Resource" path="res://inventory_system/data/resources/player_data.tres" id="7"]
-
-[sub_resource type="StyleBoxTexture" id="2"]
-texture = ExtResource("3")
-region_rect = Rect2(0, 0, 18, 18)
 
 [node name="inventory_manager" type="CanvasLayer"]
 script = ExtResource("5")
@@ -24,15 +19,14 @@ script = ExtResource("6")
 
 [node name="item_info" parent="." instance=ExtResource("1")]
 unique_name_in_owner = true
-visible = false
 offset_left = 551.5
 offset_top = 324.5
 offset_right = 634.5
 offset_bottom = 351.5
-theme_override_styles/panel = SubResource("2")
 
 [node name="item_action_menu" parent="." instance=ExtResource("4")]
 unique_name_in_owner = true
+texture_filter = 1
 
 [node name="behind" type="CanvasLayer" parent="."]
 

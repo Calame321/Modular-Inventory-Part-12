@@ -9,41 +9,40 @@
 [ext_resource type="Texture2D" uid="uid://ds3veql7rkume" path="res://inventory_system/resources/sprites/arrow.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://8nygr6q32xi5" path="res://inventory_system/resources/sprites/button/pressed.png" id="8"]
 
-[sub_resource type="StyleBoxTexture" id="4"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vs7rx"]
 texture = ExtResource("5")
+texture_margin_left = 4.0
+texture_margin_top = 3.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 11, 11)
 
-[sub_resource type="StyleBoxTexture" id="1"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vypl6"]
 texture = ExtResource("6")
+texture_margin_left = 4.0
+texture_margin_top = 3.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 11, 11)
 
-[sub_resource type="StyleBoxTexture" id="2"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhd5h"]
 texture = ExtResource("8")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 region_rect = Rect2(0, 0, 11, 11)
 
-[sub_resource type="StyleBoxTexture" id="3"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpp1a"]
 texture = ExtResource("4")
+texture_margin_left = 4.0
+texture_margin_top = 3.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 11, 11)
 
 [node name="crafting_option" instance=ExtResource("3")]
-anchors_preset = 5
-offset_right = 76.0
 script = ExtResource("1")
-price_list = NodePath("MarginContainer/HBoxContainer/price")
-produce_list = NodePath("MarginContainer/HBoxContainer/produce")
-craft_btn = NodePath("MarginContainer/HBoxContainer/commands/craft")
-
-[node name="title" parent="." index="0"]
-layout_mode = 2
-
-[node name="TextureRect" parent="title" index="0"]
-layout_mode = 0
-
-[node name="Label" parent="title/TextureRect" index="0"]
-layout_mode = 0
-
-[node name="MarginContainer" parent="." index="1"]
-layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" index="0"]
 layout_mode = 2
@@ -75,10 +74,9 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2")
-theme_override_styles/normal = SubResource("4")
-theme_override_styles/hover = SubResource("1")
-theme_override_styles/pressed = SubResource("2")
-theme_override_styles/disabled = SubResource("3")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_vs7rx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vypl6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dhd5h")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_rpp1a")
 text = "Craft"
-
-[connection signal="pressed" from="MarginContainer/HBoxContainer/commands/craft" to="." method="_on_craft_pressed"]

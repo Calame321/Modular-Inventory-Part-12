@@ -17,6 +17,7 @@ cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="item_quantity" type="ColorRect"]
+texture_filter = 1
 custom_minimum_size = Vector2(36, 18)
 offset_right = 36.0
 offset_bottom = 18.0
@@ -51,3 +52,5 @@ offset_right = -19.0
 theme_override_colors/font_color = Color(0.933333, 0.764706, 0.603922, 1)
 theme_override_fonts/font = SubResource("1")
 text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1

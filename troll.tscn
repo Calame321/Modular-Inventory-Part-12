@@ -29,8 +29,8 @@ shape = SubResource("1")
 
 [node name="interactable_zone" type="Area2D" parent="."]
 unique_name_in_owner = true
-collision_layer = 8
-collision_mask = 0
+collision_layer = 0
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_zone"]
 rotation = -1.57079
@@ -56,11 +56,15 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4")
 text = "Press \"e\" to *action*"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="object_name" type="Label" parent="interactable labels"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5")
 text = "object name!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="area_exited" from="interactable_zone" to="." method="_on_interactable_zone_area_exited"]

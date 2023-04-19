@@ -5,28 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://ctnbgcbg75hd0" path="res://inventory_system/scenes/inventory/equipment_slot_node.tscn" id="5"]
 
 [node name="equipment" instance=ExtResource("4")]
-custom_minimum_size = Vector2(0, 70)
-anchors_preset = 5
 script = ExtResource("2")
-slot_container = NodePath("MarginContainer/slot_container")
-head = NodePath("MarginContainer/slot_container/equipment_head")
-chest = NodePath("MarginContainer/slot_container/equipment_chest")
-offhand = NodePath("MarginContainer/slot_container/equipment_offhand")
-main_hand = NodePath("MarginContainer/slot_container/equipment_main_hand")
-
-[node name="title" parent="." index="0"]
-layout_mode = 2
-
-[node name="TextureRect" parent="title" index="0"]
-layout_mode = 0
-
-[node name="Label" parent="title/TextureRect" index="0"]
-layout_mode = 0
-
-[node name="MarginContainer" parent="." index="1"]
-layout_mode = 2
 
 [node name="slot_container" type="Control" parent="MarginContainer" index="0"]
+custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 
 [node name="equipment_head" parent="MarginContainer/slot_container" index="0" instance=ExtResource("5")]

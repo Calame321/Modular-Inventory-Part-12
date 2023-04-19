@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://iixw61r8utqk"]
 
-[ext_resource path="res://inventory_system/scripts/interactables/treasure_chest.gd" type="Script" id=1]
-[ext_resource path="res://inventory_system/resources/sprites/interactables/gold_chest.png" type="Texture2D" id=2]
-[ext_resource path="res://inventory_system/scenes/interactables/interactable_chest.tscn" type="PackedScene" id=3]
+[ext_resource type="Script" path="res://inventory_system/scripts/interactables/treasure_chest.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bx3jlfa3rf6lv" path="res://inventory_system/resources/sprites/interactables/gold_chest.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://c5uh6bhur8igq" path="res://inventory_system/scenes/interactables/interactable_chest.tscn" id="3"]
 
-[node name="treasure_chest" instance=ExtResource( 3 )]
-script = ExtResource( 1 )
-inventory_name = "Infinite Loot"
-items = [ "gold_coin", "helmet", "tshirt", "chestplate", "wooden_sword", "iron_sword", "shield", "magic_orb" ]
+[node name="treasure_chest" instance=ExtResource("3")]
+script = ExtResource("1")
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource( 2 )
+texture = ExtResource("2")

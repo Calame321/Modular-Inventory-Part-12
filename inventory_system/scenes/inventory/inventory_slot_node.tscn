@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://inventory_system/scripts/inventory/inventory_slot_node.gd" id="2"]
 
 [node name="inventory_slot" type="TextureRect"]
+texture_filter = 1
 offset_right = 20.0
 offset_bottom = 20.0
 mouse_filter = 0

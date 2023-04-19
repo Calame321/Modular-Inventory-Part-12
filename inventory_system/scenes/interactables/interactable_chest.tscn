@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://ct2tqjdrk3wn4" path="res://inventory_system/resources/sprites/interactables/chest.png" id="2"]
 
 [sub_resource type="CapsuleShape2D" id="1"]
-radius = 43.6769
-height = 87.3538
+radius = 26.0526
+height = 52.1051
 
 [node name="chest" type="Area2D"]
-collision_layer = 0
-collision_mask = 8
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
