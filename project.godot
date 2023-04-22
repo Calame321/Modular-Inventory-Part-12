@@ -33,6 +33,7 @@ gdscript/warnings/return_value_discarded=false
 
 [display]
 
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [gdnative]
@@ -120,5 +121,6 @@ use_pixel_snap=true
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 environment/defaults/default_clear_color=Color(0.0784314, 0.105882, 0.145098, 1)
 vram_compression/import_etc=true

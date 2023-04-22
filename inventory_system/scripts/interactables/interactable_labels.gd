@@ -1,4 +1,4 @@
-extends Control
+extends Scale_Control
 
 func display( interactable ):
 	%action.text = "Press 'e' to " + interactable.action

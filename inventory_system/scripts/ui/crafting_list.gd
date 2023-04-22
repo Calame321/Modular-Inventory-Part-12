@@ -1,6 +1,7 @@
 extends UiWindow
 
 func _ready():
+	super()
 	SignalManager.crafting_opened.connect( _on_crafting_opened )
 	SignalManager.crafting_out_of_range.connect( _on_crafting_out_of_range )
 

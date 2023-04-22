@@ -4,6 +4,7 @@ extends UiWindow
 
 # Draw the player's inventories from the player's data.
 func _ready():
+	super()
 	var equipment_panel = ResourceManager.get_instance( "equipment_node" )
 	var inventory_left_panel = ResourceManager.get_instance( "inventory_node" )
 	var inventory_right_panel = ResourceManager.get_instance( "inventory_node" )

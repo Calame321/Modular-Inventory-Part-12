@@ -167,11 +167,12 @@ cache/0/10/0/kerning_overrides/10/0 = Vector2(0, 0)
 
 [node name="settings" instance=ExtResource("2")]
 offset_left = -91.0
-offset_top = -50.0
+offset_top = -46.0
 offset_right = 91.0
-offset_bottom = 42.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(91, 46)
 script = ExtResource("9")
 settings_data = ExtResource("3")
 
@@ -191,7 +192,8 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Label" type="Label" parent="setting list/scale" index="0"]
+[node name="current_scale" type="Label" parent="setting list/scale" index="0"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

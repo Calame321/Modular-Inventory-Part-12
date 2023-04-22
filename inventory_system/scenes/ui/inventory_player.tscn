@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c1xw2ywgml5ml" path="res://inventory_system/scenes/ui/ui_window.tscn" id="6"]
 
 [node name="inventory_player" instance=ExtResource("6")]
+pivot_offset = Vector2(72, 30)
 script = ExtResource("1")
 player_data = ExtResource("2")
 

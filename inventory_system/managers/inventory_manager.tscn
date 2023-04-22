@@ -19,6 +19,7 @@ script = ExtResource("6")
 
 [node name="item_info" parent="." instance=ExtResource("1")]
 unique_name_in_owner = true
+visible = false
 offset_left = 551.5
 offset_top = 324.5
 offset_right = 634.5
@@ -26,7 +27,6 @@ offset_bottom = 351.5
 
 [node name="item_action_menu" parent="." instance=ExtResource("4")]
 unique_name_in_owner = true
-texture_filter = 1
 
 [node name="behind" type="CanvasLayer" parent="."]
 

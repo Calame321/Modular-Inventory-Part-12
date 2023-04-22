@@ -7,6 +7,7 @@
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(72, 28)
 script = ExtResource("8")
 
 [node name="lbl_title" parent="title" index="1"]

@@ -3,6 +3,7 @@ extends UiWindow
 @export var player_data : Player_Data
 
 func _ready():
+	super()
 	player_data.equipment.content_changed.connect( _on_content_changed )
 	_on_content_changed( player_data.equipment.groups )
 

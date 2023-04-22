@@ -6,12 +6,6 @@
 [node name="crafting_list" instance=ExtResource("1")]
 script = ExtResource("2")
 
-[node name="close" parent="title" index="0"]
-offset_left = 0.0
-offset_top = -9.0
-offset_right = 9.0
-offset_bottom = 0.0
-
 [node name="lbl_title" parent="title" index="1"]
 text = "Crafting"
 

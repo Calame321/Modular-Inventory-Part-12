@@ -3,6 +3,7 @@ extends UiWindow
 var current_inventory
 
 func _ready():
+	super()
 	SignalManager.inventory_opened.connect( _on_inventory_opened )
 	SignalManager.inventory_closed.connect( _on_inventory_closed )
 

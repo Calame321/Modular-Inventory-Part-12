@@ -1,23 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ducqtpe60fduc"]
+[gd_scene load_steps=5 format=3 uid="uid://ducqtpe60fduc"]
 
 [ext_resource type="FontFile" uid="uid://c2wbhmvt6pm3k" path="res://inventory_system/resources/font/Arcadepix Plus.ttf" id="1"]
 [ext_resource type="Texture2D" uid="uid://ddwobnon6ksr7" path="res://inventory_system/resources/sprites/inner_panel.png" id="2"]
 [ext_resource type="Script" path="res://inventory_system/scripts/ui/item_action_menu.gd" id="3"]
-
-[sub_resource type="FontFile" id="1"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
-face_index = null
-embolden = null
-transform = null
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [sub_resource type="StyleBoxTexture" id="2"]
 texture = ExtResource("2")
@@ -28,14 +13,25 @@ texture_margin_bottom = 8.0
 region_rect = Rect2(0, 0, 18, 18)
 
 [node name="item_action_menu" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("3")
 
 [node name="item_menu" type="PopupMenu" parent="."]
 unique_name_in_owner = true
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+sdf_scale = 0
+visible = true
+always_on_top = true
+transparent = true
+content_scale_mode = 1
+content_scale_aspect = 4
 theme_override_colors/font_color = Color(0.423529, 0.247059, 0.121569, 1)
-theme_override_fonts/font = SubResource("1")
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 12
 theme_override_styles/panel = SubResource("2")
 
 [connection signal="id_pressed" from="item_menu" to="." method="_on_PopupMenu_id_pressed"]
+[connection signal="window_input" from="item_menu" to="." method="_on_item_menu_window_input"]

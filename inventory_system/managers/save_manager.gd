@@ -26,7 +26,7 @@ func save_game():
 	var dir = DirAccess.open( SAVE_FOLDER )
 	
 	if not dir:
-		dir.make_dir_recursive( SAVE_FOLDER )
+		DirAccess.make_dir_absolute( SAVE_FOLDER )
 		dir = DirAccess.open( SAVE_FOLDER )
 	
 	var save_path = SAVE_FOLDER + SAVE_FILE

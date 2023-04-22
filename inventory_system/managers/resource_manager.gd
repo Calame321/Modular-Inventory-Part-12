@@ -23,7 +23,7 @@ var sprites = {
 }
 
 var fonts = {
-	8: preload( "res://inventory_system/resources/font/font_8.tres" )
+	"Arcadepix": preload( "res://inventory_system/resources/font/Arcadepix Plus.ttf" )
 }
 
 var colors = {

@@ -48,6 +48,7 @@ texture_filter = 0
 layout_mode = 1
 offset_top = -30.0
 offset_bottom = 30.0
+pivot_offset = Vector2(0, 0)
 
 [node name="inventory_player" parent="ui/ui_container/windows" instance=ExtResource("1")]
 unique_name_in_owner = true
@@ -56,7 +57,7 @@ layout_mode = 1
 offset_left = -337.0
 offset_top = -77.0
 offset_right = -193.0
-offset_bottom = 97.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -68,21 +69,16 @@ offset_top = -30.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(0, 0)
 
 [node name="player_stats" parent="ui/ui_container/windows" instance=ExtResource("4")]
 texture_filter = 0
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -391.0
-offset_top = -241.0
-offset_right = -295.0
-offset_bottom = -189.0
-grow_horizontal = 1
-grow_vertical = 1
+layout_mode = 1
+offset_left = -445.0
+offset_top = -83.0
+offset_right = -349.0
+offset_bottom = 1.0
+pivot_offset = Vector2(0, 0)
 
 [node name="hotbar" parent="ui/ui_container" instance=ExtResource("10")]
 layout_mode = 1

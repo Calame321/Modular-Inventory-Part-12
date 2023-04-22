@@ -302,6 +302,7 @@ offset_left = -72.0
 offset_top = -29.0
 offset_right = 72.0
 offset_bottom = 31.0
+pivot_offset = Vector2(72, 30)
 mouse_filter = 1
 theme_override_styles/panel = SubResource("2")
 script = ExtResource("2_giers")

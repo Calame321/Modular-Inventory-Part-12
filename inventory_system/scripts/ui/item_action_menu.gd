@@ -1,11 +1,16 @@
-extends Control
+extends Scale_Control
 
 var actions = []
 var actions_args = []
 
+func _ready():
+	super()
+	%item_menu.hide()
+
 # Display the menu for the selected item.
 func display( slot_node ):
 	%item_menu.position = slot_node.global_position
+	%item_menu.position.y += slot_node.size.y
 	%item_menu.clear()
 	actions = []
 	actions_args = []
@@ -16,7 +21,7 @@ func display( slot_node ):
 	
 	# If it's possible to split.
 	if slot_node.slot.can_split and slot_node.slot.item.quantity > 1:
-		add_action( "Split", InventoryManager.split.bind( slot_node ) )
+		add_action( "Split", InventoryManager.split.bind( slot_node, slot_node.global_position ) )
 	
 	# Get the actions of the components.
 	for c in slot_node.slot.item.components:
@@ -45,6 +50,11 @@ func add_action( action_name, action, args = [] ):
 # Activate the clicked action.
 func _on_PopupMenu_id_pressed( id ):
 	actions[ id ].callv( actions_args[ id ] )
+
+# Close the popup if left clicked outside.
+func _on_item_menu_window_input( event ):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+		%item_menu.hide()
 
 
 

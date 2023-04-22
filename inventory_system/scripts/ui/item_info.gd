@@ -1,4 +1,4 @@
-class_name Item_Info extends Control
+class_name Item_Info extends Scale_Control
 
 # Display the hovered item info.
 # Each components on the item also adds their info.
@@ -19,7 +19,7 @@ func display( slot_node : Inventory_Slot_Node ):
 	size = Vector2.ZERO
 	show()
 	
-	global_position = ( slot_node.size * SettingsManager.scale ) + slot_node.global_position
+	global_position = ( slot_node.size * SettingsManager.ui_scale ) + slot_node.global_position
 	var window_size = get_viewport().get_visible_rect().size
 	var scaled = ( size * scale )
 	

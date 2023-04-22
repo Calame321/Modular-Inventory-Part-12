@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bft3d40re7ii2"]
 
 [ext_resource type="Script" path="res://inventory_system/scripts/ui/crafting_option.gd" id="1"]
-[ext_resource type="FontFile" path="res://inventory_system/resources/font/font_8.tres" id="2"]
+[ext_resource type="FontFile" uid="uid://esm8m6bfjnxa" path="res://inventory_system/resources/font/font_8.tres" id="2"]
 [ext_resource type="PackedScene" uid="uid://dnuxhuagrcni4" path="res://inventory_system/scenes/ui/inner_panel.tscn" id="3"]
 [ext_resource type="Texture2D" uid="uid://qo2hbeby12xd" path="res://inventory_system/resources/sprites/button/disabled.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://d2taav63cibt4" path="res://inventory_system/resources/sprites/button/normal.png" id="5"]
@@ -80,3 +80,5 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_vypl6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_dhd5h")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_rpp1a")
 text = "Craft"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/commands/craft" to="." method="_on_craft_pressed"]

@@ -1,4 +1,4 @@
-class_name Dragable_Control extends Control
+class_name Dragable_Control extends Scale_Control
 
 @export var safe_zone : int = 30
 
@@ -6,6 +6,7 @@ var dragging : bool = false
 var offset : Vector2
 
 func _ready():
+	super()
 	get_viewport().size_changed.connect( _on_size_changed )
 
 # If the mouse is moving and currently dragging, move the control.
@@ -15,7 +16,8 @@ func _input( event ):
 
 # Change the scale, but keep the control in the screen.
 func set_ui_scale( value ):
-	await get_tree().idle_frame
+	super( value )
+	await get_tree().process_frame
 	set_pos( position )
 
 # Set the position of the control, but keep it in the screen.
@@ -29,7 +31,7 @@ func set_pos( pos ):
 # If left clicking on the control, start dragging.
 func _gui_input( event : InputEvent ):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		offset = event.global_position - position
+		offset = get_global_mouse_position() - position
 		dragging = event.pressed
 		move_to_front()
 
