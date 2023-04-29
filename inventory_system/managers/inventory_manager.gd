@@ -153,8 +153,6 @@ func _on_gui_input_slot( event : InputEvent, slot_node : Inventory_Slot_Node ):
 			%item_in_hand.item = slot.put_item( %item_in_hand.item )
 			
 			if %item_in_hand.item and had_empty_hand:
-				var test1 = event_position
-				var test2 = slot_node.global_position
 				item_offset = event_position - slot_node.global_position
 			
 			set_hand_position( event_position )
